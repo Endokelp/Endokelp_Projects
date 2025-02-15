@@ -1,3 +1,5 @@
+
+//use comments to communicate 
 package javaProjects;
 import java.util.ArrayList;
 import java.util.Scanner;
