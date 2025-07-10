@@ -1,0 +1,3810 @@
+.animate-in {
+  animation: fadeUpIn 0.8s ease forwards;
+}
+
+@keyframes fadeUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add styles to ensure parent container properly handles aspect ratio */
+.aspect-w-4 {
+  position: relative;
+  padding-bottom: calc(5 / 4 * 100%);
+}
+
+.aspect-h-5 > * {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dark mode transition */
+.dark {
+  color-scheme: dark;
+}
+
+/* Scroll up animation */
+.scroll-up {
+  animation: fadeDownOut 0.8s ease forwards;
+}
+
+@keyframes fadeDownOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}

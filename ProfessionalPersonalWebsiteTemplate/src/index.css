@@ -1,0 +1,7 @@
+@import './styles/animations.css';
+@import './styles/cursor.css';
+@import './styles/liquid-glass.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

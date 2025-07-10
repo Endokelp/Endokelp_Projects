@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/jpeg" href="/your-favicon.jpg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[Your Name] - Portfolio</title>
+    <meta name="description" content="[Your Name] - Software Developer Portfolio. Showcasing projects and skills in web development, programming, and technology solutions." />
+    <meta name="keywords" content="web development, software engineering, programming, portfolio, frontend, backend, full stack, React, JavaScript, TypeScript, HTML, CSS, responsive design, user experience, UI/UX, modern web design, tech portfolio, developer portfolio, software developer, web developer, coding projects, programming projects, technology, innovation, digital solutions" />
+    <meta name="author" content="[Your Name]" />
+    <meta property="og:title" content="[Your Name] - Software Developer Portfolio" />
+    <meta property="og:description" content="Discover innovative web development projects and technical expertise by [Your Name] - a passionate software developer and technology enthusiast." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/your-image.jpg" />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta property="og:site_name" content="[Your Name] Portfolio" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="[Your Name] - Software Developer Portfolio" />
+    <meta name="twitter:description" content="Discover innovative web development projects and technical expertise by [Your Name] - a passionate software developer and technology enthusiast." />
+    <meta name="twitter:image" content="/your-image.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark' || (theme === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
