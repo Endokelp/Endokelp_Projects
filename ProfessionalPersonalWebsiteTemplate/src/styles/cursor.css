@@ -1,0 +1,11 @@
+* {
+  cursor: url('../assets/leaf-cursor.svg') 16 16, auto;
+}
+
+a, button, [role="button"], input[type="submit"], input[type="button"], input[type="reset"] {
+  cursor: url('../assets/leaf-cursor.svg') 16 16, pointer;
+}
+
+text, textarea, input[type="text"], input[type="password"], input[type="email"] {
+  cursor: url('../assets/leaf-cursor.svg') 16 16, text;
+}
