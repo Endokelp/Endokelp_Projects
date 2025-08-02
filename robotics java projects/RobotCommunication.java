@@ -7,11 +7,10 @@ import java.security.NoSuchAlgorithmException;
 /**
  * Robot Communication Protocol System
  * Implements communication protocols for multi-robot coordination
- * Demonstrates message passing, protocol design, and network simulation
  */
 public class RobotCommunication {
     
-    // Message types for robot communication
+    //Message types for robot communication
     enum MessageType {
         HEARTBEAT(0x01),
         POSITION_UPDATE(0x02),
@@ -42,7 +41,7 @@ public class RobotCommunication {
         }
     }
     
-    // Robot message structure
+    //Robot message structure
     static class RobotMessage {
         private int senderId;
         private int receiverId; // -1 for broadcast
@@ -120,7 +119,7 @@ public class RobotCommunication {
             return message;
         }
         
-        // Getters
+        //Getters
         public int getSenderId() { return senderId; }
         public int getReceiverId() { return receiverId; }
         public MessageType getType() { return type; }
@@ -136,7 +135,7 @@ public class RobotCommunication {
         }
     }
     
-    // Robot position data
+    //Robot position data
     static class Position {
         double x, y, z;
         double heading; // radians
@@ -170,7 +169,7 @@ public class RobotCommunication {
         }
     }
     
-    // Task assignment data
+    //Task assignment data
     static class TaskAssignment {
         String taskId;
         String taskType;
@@ -239,7 +238,7 @@ public class RobotCommunication {
         }
     }
     
-    // Robot status information
+    //Robot status information
     static class RobotStatus {
         int robotId;
         String status; // IDLE, MOVING, WORKING, ERROR, CHARGING
@@ -318,7 +317,7 @@ public class RobotCommunication {
         }
     }
     
-    // Communication network simulator
+    //Communication network simulator
     static class NetworkSimulator {
         private Map<Integer, Robot> robots;
         private Queue<RobotMessage> messageQueue;
@@ -343,13 +342,13 @@ public class RobotCommunication {
         }
         
         public boolean sendMessage(RobotMessage message) {
-            // Simulate packet loss
+            //Simulate packet loss
             if (random.nextDouble() < packetLossRate) {
                 System.out.println("[NETWORK] Packet lost: " + message);
                 return false;
             }
             
-            // Add network delay
+            //Add network delay
             Timer timer = new Timer();
             timer.schedule(new TimerTask() {
                 @Override
@@ -363,14 +362,14 @@ public class RobotCommunication {
         
         private void deliverMessage(RobotMessage message) {
             if (message.getReceiverId() == -1) {
-                // Broadcast message
+                //Broadcast message
                 for (Robot robot : robots.values()) {
                     if (robot.getId() != message.getSenderId()) {
                         robot.receiveMessage(message);
                     }
                 }
             } else {
-                // Unicast message
+                //Unicast message
                 Robot receiver = robots.get(message.getReceiverId());
                 if (receiver != null) {
                     receiver.receiveMessage(message);
@@ -393,7 +392,7 @@ public class RobotCommunication {
         }
     }
     
-    // Robot class with communication capabilities
+    //Robot class with communication capabilities
     static class Robot {
         private int id;
         private String name;
@@ -418,7 +417,7 @@ public class RobotCommunication {
             this.messageProcessor = Executors.newSingleThreadExecutor();
             this.running = true;
             
-            // Start message processing thread
+            //Start message processing thread
             messageProcessor.submit(this::processMessages);
         }
         
@@ -442,7 +441,7 @@ public class RobotCommunication {
                 return;
             }
             
-            // Check for duplicate messages
+            //Check for duplicate messages
             Integer lastSeq = lastReceivedSequence.get(message.getSenderId());
             if (lastSeq != null && message.getSequenceNumber() <= lastSeq) {
                 System.out.println("[ROBOT " + id + "] Duplicate message ignored: " + message);
@@ -500,7 +499,7 @@ public class RobotCommunication {
         }
         
         private void handleHeartbeat(RobotMessage message) {
-            // Send acknowledgment
+            //Send acknowledgment
             sendMessage(message.getSenderId(), MessageType.ACKNOWLEDGMENT, 
                        ("heartbeat_ack_" + message.getSequenceNumber()).getBytes());
         }
@@ -517,7 +516,7 @@ public class RobotCommunication {
             status.currentTask = task.taskId;
             status.status = "WORKING";
             
-            // Send acknowledgment
+            //Send acknowledgment
             sendMessage(message.getSenderId(), MessageType.ACKNOWLEDGMENT, 
                        ("task_accepted_" + task.taskId).getBytes());
         }
@@ -531,7 +530,7 @@ public class RobotCommunication {
             System.out.println("[ROBOT " + id + "] EMERGENCY STOP received from robot " + message.getSenderId());
             status.status = "EMERGENCY_STOP";
             
-            // Broadcast acknowledgment
+            //Broadcast acknowledgment
             broadcastMessage(MessageType.ACKNOWLEDGMENT, "emergency_stop_ack".getBytes());
         }
         
@@ -539,7 +538,7 @@ public class RobotCommunication {
             String request = new String(message.getPayload());
             System.out.println("[ROBOT " + id + "] Coordination request: " + request);
             
-            // Simple coordination response
+            //Simple coordination response
             String response = "coordination_response_from_" + id;
             sendMessage(message.getSenderId(), MessageType.ACKNOWLEDGMENT, response.getBytes());
         }
@@ -589,7 +588,7 @@ public class RobotCommunication {
             messageProcessor.shutdown();
         }
         
-        // Getters
+        //Getters
         public int getId() { return id; }
         public String getName() { return name; }
         public Position getPosition() { return position; }

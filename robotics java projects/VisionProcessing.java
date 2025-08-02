@@ -1,17 +1,15 @@
 import java.util.*;
-import java.util.concurrent.*;
 
 /**
  * Vision Processing System for Robotics
  * Implements computer vision algorithms for object detection and tracking
- * Demonstrates image processing, pattern recognition, and coordinate transformations
  */
 public class VisionProcessing {
     
-    // Simple image representation
+    //Simple image representation
     static class Image {
         int width, height;
-        int[][][] pixels; // [height][width][RGB]
+        int[][][] pixels; //[height][width][RGB]
         
         public Image(int width, int height) {
             this.width = width;
@@ -51,7 +49,7 @@ public class VisionProcessing {
         }
     }
     
-    // Detected object representation
+    //Detected object representation
     static class DetectedObject {
         int x, y, width, height;
         String label;
@@ -86,7 +84,7 @@ public class VisionProcessing {
         }
     }
     
-    // Camera calibration parameters
+    //Camera calibration parameters
     static class CameraCalibration {
         double focalLengthX, focalLengthY;
         double principalPointX, principalPointY;
@@ -100,14 +98,14 @@ public class VisionProcessing {
             this.distortionCoeffs = new double[]{0, 0, 0, 0, 0}; // Simplified
         }
         
-        // Convert pixel coordinates to real-world coordinates
+        //Convert pixel coordinates to real-world coordinates
         public double[] pixelToWorld(int pixelX, int pixelY, double depth) {
             double worldX = (pixelX - principalPointX) * depth / focalLengthX;
             double worldY = (pixelY - principalPointY) * depth / focalLengthY;
             return new double[]{worldX, worldY, depth};
         }
         
-        // Convert real-world coordinates to pixel coordinates
+        //Convert real-world coordinates to pixel coordinates
         public int[] worldToPixel(double worldX, double worldY, double worldZ) {
             int pixelX = (int)(focalLengthX * worldX / worldZ + principalPointX);
             int pixelY = (int)(focalLengthY * worldY / worldZ + principalPointY);
@@ -120,7 +118,7 @@ public class VisionProcessing {
     private Random random;
     
     public VisionProcessing() {
-        // Default camera calibration (typical webcam)
+        //Default camera calibration (typical webcam)
         calibration = new CameraCalibration(800, 800, 320, 240);
         trackedObjects = new ArrayList<>();
         random = new Random(42);
@@ -136,9 +134,9 @@ public class VisionProcessing {
         for (int y = 0; y < image.height; y++) {
             for (int x = 0; x < image.width; x++) {
                 if (!visited[y][x] && isColorMatch(image.getPixel(x, y), targetColor, tolerance)) {
-                    // Found a matching pixel, perform flood fill to find the object
+                    //Found a matching pixel, perform flood fill to find the object
                     DetectedObject obj = floodFillObject(image, x, y, targetColor, tolerance, visited);
-                    if (obj != null && obj.getArea() > 50) { // Minimum size threshold
+                    if (obj != null && obj.getArea() > 50) { //Minimum size threshold
                         objects.add(obj);
                     }
                 }
@@ -172,13 +170,13 @@ public class VisionProcessing {
             int y = current[1];
             pixelCount++;
             
-            // Update bounding box
+            //Update bounding box
             minX = Math.min(minX, x);
             maxX = Math.max(maxX, x);
             minY = Math.min(minY, y);
             maxY = Math.max(maxY, y);
             
-            // Check 4-connected neighbors
+            //Check 4-connected neighbors
             int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
             for (int[] dir : directions) {
                 int nx = x + dir[0];
@@ -192,7 +190,7 @@ public class VisionProcessing {
             }
         }
         
-        if (pixelCount > 10) { // Minimum pixel count
+        if (pixelCount > 10) { //Minimum pixel count
             return new DetectedObject(minX, minY, maxX - minX + 1, maxY - minY + 1, 
                                     "ColorObject", 0.8);
         }
@@ -206,7 +204,7 @@ public class VisionProcessing {
     public Image detectEdges(Image image) {
         Image edges = new Image(image.width, image.height);
         
-        // Sobel kernels
+        //Sobel kernels
         int[][] sobelX = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
         int[][] sobelY = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
         
@@ -214,7 +212,7 @@ public class VisionProcessing {
             for (int x = 1; x < image.width - 1; x++) {
                 int gx = 0, gy = 0;
                 
-                // Apply Sobel kernels
+                //Apply Sobel kernels
                 for (int ky = -1; ky <= 1; ky++) {
                     for (int kx = -1; kx <= 1; kx++) {
                         int gray = image.getGrayscale(x + kx, y + ky);
@@ -223,7 +221,7 @@ public class VisionProcessing {
                     }
                 }
                 
-                // Calculate gradient magnitude
+                //Calculate gradient magnitude
                 int magnitude = (int)Math.sqrt(gx * gx + gy * gy);
                 magnitude = Math.min(255, magnitude);
                 
@@ -251,7 +249,7 @@ public class VisionProcessing {
             }
         }
         
-        // Non-maximum suppression to remove overlapping detections
+        //Non maximum suppression to remove overlapping detections
         return nonMaximumSuppression(matches, 0.3);
     }
     
@@ -321,13 +319,13 @@ public class VisionProcessing {
      */
     public void updateTracking(List<DetectedObject> newDetections) {
         if (trackedObjects.isEmpty()) {
-            // Initialize tracking with new detections
+            //Initialize tracking with new detections
             trackedObjects.addAll(newDetections);
             return;
         }
         
-        // Match new detections with existing tracked objects
-        double maxDistance = 50.0; // Maximum distance for matching
+        //Match new detections with existing tracked objects
+        double maxDistance = 50.0; //Maximum distance for matching
         List<DetectedObject> updatedTracking = new ArrayList<>();
         List<Boolean> matched = new ArrayList<>(Collections.nCopies(newDetections.size(), false));
         
@@ -351,7 +349,7 @@ public class VisionProcessing {
             }
             
             if (bestMatch != -1) {
-                // Update tracked object with new detection
+                //Update tracked object with new detection
                 DetectedObject detection = newDetections.get(bestMatch);
                 tracked.x = detection.x;
                 tracked.y = detection.y;
@@ -362,10 +360,10 @@ public class VisionProcessing {
                 updatedTracking.add(tracked);
                 matched.set(bestMatch, true);
             }
-            // If no match found, the tracked object is lost (not added to updated list)
+            //If no match found, the tracked object is lost (not added to updated list)
         }
         
-        // Add new detections that weren't matched
+        //Add new detections that weren't matched
         for (int i = 0; i < newDetections.size(); i++) {
             if (!matched.get(i)) {
                 updatedTracking.add(newDetections.get(i));
@@ -388,20 +386,20 @@ public class VisionProcessing {
     public Image generateTestImage(int width, int height) {
         Image image = new Image(width, height);
         
-        // Fill with background
+        //Fill with background
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
-                image.setPixel(x, y, 50, 50, 50); // Dark gray background
+                image.setPixel(x, y, 50, 50, 50); //Dark gray background
             }
         }
         
-        // Add some colored rectangles
-        addRectangle(image, 50, 50, 80, 60, new int[]{255, 0, 0}); // Red
-        addRectangle(image, 200, 100, 60, 80, new int[]{0, 255, 0}); // Green
-        addRectangle(image, 350, 80, 70, 70, new int[]{0, 0, 255}); // Blue
-        addRectangle(image, 150, 200, 90, 50, new int[]{255, 255, 0}); // Yellow
+        //Add some colored rectangles
+        addRectangle(image, 50, 50, 80, 60, new int[]{255, 0, 0}); //Red
+        addRectangle(image, 200, 100, 60, 80, new int[]{0, 255, 0}); //Green
+        addRectangle(image, 350, 80, 70, 70, new int[]{0, 0, 255}); //Blue
+        addRectangle(image, 150, 200, 90, 50, new int[]{255, 255, 0}); //Yellow
         
-        // Add some noise
+        //Add some noise
         for (int i = 0; i < 1000; i++) {
             int x = random.nextInt(width);
             int y = random.nextInt(height);
@@ -450,7 +448,7 @@ public class VisionProcessing {
         
         VisionProcessing vision = new VisionProcessing();
         
-        // Test 1: Generate and display test image
+        //Test 1: Generate and display test image
         System.out.println("Test 1: Synthetic Image Generation");
         System.out.println("-----------------------------------");
         
@@ -462,30 +460,30 @@ public class VisionProcessing {
         
         System.out.println("\n" + "=".repeat(60));
         
-        // Test 2: Color-based object detection
+        //Test 2: Color-based object detection
         System.out.println("\nTest 2: Color-based Object Detection");
         System.out.println("------------------------------------");
         
-        // Detect red objects
+        //Detect red objects
         List<DetectedObject> redObjects = vision.detectColorObjects(testImage, new int[]{255, 0, 0}, 30);
         System.out.println("Red objects detected: " + redObjects.size());
         for (DetectedObject obj : redObjects) {
             System.out.println("  " + obj);
             
-            // Convert to world coordinates (assuming 1m depth)
+            //Convert to world coordinates (assuming 1m depth)
             double[] worldCoords = vision.pixelToWorldCoordinates(obj.getCenterX(), obj.getCenterY(), 1.0);
             System.out.printf("    World coordinates: (%.3f, %.3f, %.3f)%n", 
                 worldCoords[0], worldCoords[1], worldCoords[2]);
         }
         
-        // Detect green objects
+        //Detect green objects
         List<DetectedObject> greenObjects = vision.detectColorObjects(testImage, new int[]{0, 255, 0}, 30);
         System.out.println("\nGreen objects detected: " + greenObjects.size());
         for (DetectedObject obj : greenObjects) {
             System.out.println("  " + obj);
         }
         
-        // Detect blue objects
+        //Detect blue objects
         List<DetectedObject> blueObjects = vision.detectColorObjects(testImage, new int[]{0, 0, 255}, 30);
         System.out.println("\nBlue objects detected: " + blueObjects.size());
         for (DetectedObject obj : blueObjects) {
@@ -494,7 +492,7 @@ public class VisionProcessing {
         
         System.out.println("\n" + "=".repeat(60));
         
-        // Test 3: Edge detection
+        //Test 3: Edge detection
         System.out.println("\nTest 3: Edge Detection");
         System.out.println("----------------------");
         
@@ -505,11 +503,11 @@ public class VisionProcessing {
         
         System.out.println("\n" + "=".repeat(60));
         
-        // Test 4: Object tracking simulation
+        //Test 4: Object tracking simulation
         System.out.println("\nTest 4: Object Tracking Simulation");
         System.out.println("-----------------------------------");
         
-        // Combine all detected objects
+        //Combine all detected objects
         List<DetectedObject> allObjects = new ArrayList<>();
         allObjects.addAll(redObjects);
         allObjects.addAll(greenObjects);
@@ -523,14 +521,14 @@ public class VisionProcessing {
             System.out.println("  Object " + (i + 1) + ": " + tracked.get(i));
         }
         
-        // Simulate object movement
+        //Simulate object movement
         System.out.println("\nSimulating object movement...");
         for (int frame = 1; frame <= 3; frame++) {
             List<DetectedObject> movedObjects = new ArrayList<>();
             
             for (DetectedObject obj : allObjects) {
-                // Simulate slight movement
-                int newX = obj.x + vision.random.nextInt(21) - 10; // -10 to +10 pixels
+                //Simulate slight movement
+                int newX = obj.x + vision.random.nextInt(21) - 10; //-10 to +10 pixels
                 int newY = obj.y + vision.random.nextInt(21) - 10;
                 
                 DetectedObject moved = new DetectedObject(newX, newY, obj.width, obj.height, 
@@ -549,7 +547,7 @@ public class VisionProcessing {
         
         System.out.println("\n" + "=".repeat(60));
         
-        // Test 5: Camera calibration and coordinate transformation
+        //Test 5: Camera calibration and coordinate transformation
         System.out.println("\nTest 5: Camera Calibration and Coordinate Transformation");
         System.out.println("---------------------------------------------------------");
         
@@ -561,7 +559,7 @@ public class VisionProcessing {
         
         System.out.println("\nCoordinate transformation examples:");
         
-        // Test pixel to world conversion
+        //Test pixel to world conversion
         int[][] testPixels = {{200, 150}, {100, 100}, {300, 200}};
         double[] testDepths = {0.5, 1.0, 1.5};
         
@@ -579,18 +577,18 @@ public class VisionProcessing {
         
         System.out.println("\n" + "=".repeat(60));
         
-        // Test 6: Template matching simulation
+        //Test 6: Template matching simulation
         System.out.println("\nTest 6: Template Matching (Simulated)");
         System.out.println("--------------------------------------");
         
-        // Create a small template (simulated)
+        //Create a small template (simulated)
         Image template = new Image(30, 30);
         for (int y = 0; y < 30; y++) {
             for (int x = 0; x < 30; x++) {
                 if (x > 5 && x < 25 && y > 5 && y < 25) {
-                    template.setPixel(x, y, 255, 0, 0); // Red square template
+                    template.setPixel(x, y, 255, 0, 0); //Red square template
                 } else {
-                    template.setPixel(x, y, 50, 50, 50); // Background
+                    template.setPixel(x, y, 50, 50, 50); //Background
                 }
             }
         }
