@@ -3,11 +3,10 @@ import java.util.*;
 /**
  * Robot Arm Kinematics for Robotics
  * Implements forward and inverse kinematics for robotic arm control
- * Demonstrates mathematical modeling and robotics mathematics
  */
 public class RobotArmKinematics {
     
-    // Joint representation
+    //Joint representation
     static class Joint {
         double angle;        // Joint angle in radians
         double length;       // Link length
@@ -38,7 +37,7 @@ public class RobotArmKinematics {
         }
     }
     
-    // 3D Point representation
+    //3D Point representation
     static class Point3D {
         double x, y, z;
         
@@ -60,13 +59,13 @@ public class RobotArmKinematics {
         }
     }
     
-    // Transformation matrix for 3D transformations
+    //Transformation matrix for 3D transformations
     static class TransformMatrix {
         double[][] matrix;
         
         public TransformMatrix() {
             matrix = new double[4][4];
-            // Initialize as identity matrix
+            //Initialize as identity matrix
             for (int i = 0; i < 4; i++) {
                 matrix[i][i] = 1.0;
             }
@@ -120,7 +119,7 @@ public class RobotArmKinematics {
         }
     }
     
-    // Robot arm configuration
+    //Robot arm configuration
     private List<Joint> joints;
     private Point3D basePosition;
     
@@ -131,13 +130,13 @@ public class RobotArmKinematics {
     }
     
     private void initializeDefaultArm() {
-        // Create a 6-DOF robot arm (typical industrial robot)
-        joints.add(new Joint("Base", 0.5, -Math.PI, Math.PI));           // Base rotation
-        joints.add(new Joint("Shoulder", 1.0, -Math.PI/2, Math.PI/2));   // Shoulder pitch
-        joints.add(new Joint("Elbow", 0.8, -Math.PI, 0));               // Elbow pitch
-        joints.add(new Joint("Wrist1", 0.3, -Math.PI, Math.PI));        // Wrist roll
-        joints.add(new Joint("Wrist2", 0.2, -Math.PI/2, Math.PI/2));    // Wrist pitch
-        joints.add(new Joint("Wrist3", 0.1, -Math.PI, Math.PI));        // Wrist yaw
+        //Create a 6-DOF robot arm (typical industrial robot)
+        joints.add(new Joint("Base", 0.5, -Math.PI, Math.PI));           //Base rotation
+        joints.add(new Joint("Shoulder", 1.0, -Math.PI/2, Math.PI/2));   //Shoulder pitch
+        joints.add(new Joint("Elbow", 0.8, -Math.PI, 0));               //Elbow pitch
+        joints.add(new Joint("Wrist1", 0.3, -Math.PI, Math.PI));        //Wrist roll
+        joints.add(new Joint("Wrist2", 0.2, -Math.PI/2, Math.PI/2));    //Wrist pitch
+        joints.add(new Joint("Wrist3", 0.1, -Math.PI, Math.PI));        //Wrist yaw
     }
     
     /**
@@ -147,21 +146,21 @@ public class RobotArmKinematics {
         TransformMatrix currentTransform = new TransformMatrix();
         Point3D currentPosition = new Point3D(0, 0, 0);
         
-        // Apply transformations for each joint
+        //Apply transformations for each joint
         for (int i = 0; i < joints.size(); i++) {
             Joint joint = joints.get(i);
             
-            // Rotation around Z-axis for this joint
+            //Rotation around Z-axis for this joint
             TransformMatrix rotation = TransformMatrix.rotationZ(joint.getAngle());
             
-            // Translation along X-axis for link length
+            //Translation along X-axis for link length
             TransformMatrix translation = TransformMatrix.translation(joint.length, 0, 0);
             
-            // Combine transformations
+            //Combine transformations
             currentTransform = currentTransform.multiply(rotation).multiply(translation);
         }
         
-        // Transform origin to get end-effector position
+        //Transform origin to get end-effector position
         return currentTransform.transform(new Point3D(0, 0, 0));
     }
     
@@ -188,25 +187,25 @@ public class RobotArmKinematics {
         double l1 = joints.get(0).length;
         double l2 = joints.get(1).length;
         
-        // Distance to target
+        //Distance to target
         double distance = Math.sqrt(x * x + y * y);
         
-        // Check if target is reachable
+        //Check if target is reachable
         if (distance > l1 + l2 || distance < Math.abs(l1 - l2)) {
             System.out.println("Target unreachable: distance = " + distance + 
                              ", max reach = " + (l1 + l2));
             return false;
         }
         
-        // Calculate joint angles using law of cosines
+        //Calculate joint angles using law of cosines
         double cosTheta2 = (x * x + y * y - l1 * l1 - l2 * l2) / (2 * l1 * l2);
-        double theta2 = Math.acos(Math.max(-1, Math.min(1, cosTheta2))); // Elbow up solution
+        double theta2 = Math.acos(Math.max(-1, Math.min(1, cosTheta2))); //Elbow up solution
         
         double k1 = l1 + l2 * Math.cos(theta2);
         double k2 = l2 * Math.sin(theta2);
         double theta1 = Math.atan2(y, x) - Math.atan2(k2, k1);
         
-        // Set joint angles
+        //Set joint angles
         joints.get(0).setAngle(theta1);
         joints.get(1).setAngle(theta2);
         
@@ -220,30 +219,30 @@ public class RobotArmKinematics {
         for (int iteration = 0; iteration < maxIterations; iteration++) {
             Point3D currentPos = forwardKinematics();
             
-            // Calculate error
+            //Calculate error
             double errorX = target.x - currentPos.x;
             double errorY = target.y - currentPos.y;
             double errorZ = target.z - currentPos.z;
             double error = Math.sqrt(errorX * errorX + errorY * errorY + errorZ * errorZ);
             
             if (error < tolerance) {
-                return true; // Solution found
+                return true; //Solution found
             }
             
-            // Calculate Jacobian matrix (simplified)
+            //Calculate Jacobian matrix (simplified)
             double[][] jacobian = calculateJacobian();
             
-            // Calculate joint angle updates using pseudo-inverse
+            //Calculate joint angle updates using pseudo-inverse
             double[] deltaAngles = calculateJointUpdates(jacobian, errorX, errorY, errorZ);
             
-            // Update joint angles
+            //Update joint angles
             for (int i = 0; i < joints.size() && i < deltaAngles.length; i++) {
-                double newAngle = joints.get(i).getAngle() + deltaAngles[i] * 0.1; // Damping factor
+                double newAngle = joints.get(i).getAngle() + deltaAngles[i] * 0.1; //Damping factor
                 joints.get(i).setAngle(newAngle);
             }
         }
         
-        return false; // No solution found within iterations
+        return false; //No solution found within iterations
     }
     
     /**
@@ -251,23 +250,23 @@ public class RobotArmKinematics {
      */
     private double[][] calculateJacobian() {
         double[][] jacobian = new double[3][joints.size()];
-        double deltaAngle = 0.001; // Small angle for numerical differentiation
+        double deltaAngle = 0.001; //Small angle for numerical differentiation
         
         Point3D basePos = forwardKinematics();
         
         for (int j = 0; j < joints.size(); j++) {
-            // Perturb joint angle
+            //Perturb joint angle
             double originalAngle = joints.get(j).getAngle();
             joints.get(j).setAngle(originalAngle + deltaAngle);
             
             Point3D perturbedPos = forwardKinematics();
             
-            // Calculate partial derivatives
+            //Calculate partial derivatives
             jacobian[0][j] = (perturbedPos.x - basePos.x) / deltaAngle;
             jacobian[1][j] = (perturbedPos.y - basePos.y) / deltaAngle;
             jacobian[2][j] = (perturbedPos.z - basePos.z) / deltaAngle;
             
-            // Restore original angle
+            //Restore original angle
             joints.get(j).setAngle(originalAngle);
         }
         
@@ -281,7 +280,7 @@ public class RobotArmKinematics {
         double[] errors = {errorX, errorY, errorZ};
         double[] updates = new double[joints.size()];
         
-        // Simplified approach: use transpose instead of full pseudo-inverse
+        //Simplified approach: use transpose instead of full pseudo-inverse
         for (int j = 0; j < joints.size(); j++) {
             updates[j] = 0;
             for (int i = 0; i < 3; i++) {
@@ -296,7 +295,7 @@ public class RobotArmKinematics {
      * Check if a point is within the robot's workspace
      */
     public boolean isInWorkspace(Point3D point) {
-        // Calculate maximum reach
+        //Calculate maximum reach
         double maxReach = joints.stream().mapToDouble(j -> j.length).sum();
         double distance = point.distanceTo(basePosition);
         
@@ -308,17 +307,17 @@ public class RobotArmKinematics {
      */
     public List<Point3D> generateWorkspace(int samples) {
         List<Point3D> workspacePoints = new ArrayList<>();
-        Random random = new Random(42); // Fixed seed for reproducibility
+        Random random = new Random(42); //Fixed seed for reproducibility
         
         for (int i = 0; i < samples; i++) {
-            // Set random joint angles within limits
+            //Set random joint angles within limits
             for (Joint joint : joints) {
                 double randomAngle = joint.minAngle + 
                     random.nextDouble() * (joint.maxAngle - joint.minAngle);
                 joint.setAngle(randomAngle);
             }
             
-            // Calculate forward kinematics for this configuration
+            //Calculate forward kinematics for this configuration
             Point3D point = forwardKinematics();
             workspacePoints.add(point);
         }
@@ -335,7 +334,7 @@ public class RobotArmKinematics {
         for (int i = 0; i <= steps; i++) {
             double t = (double) i / steps;
             
-            // Linear interpolation in Cartesian space
+            //Linear interpolation in Cartesian space
             double x = start.x + t * (end.x - start.x);
             double y = start.y + t * (end.y - start.y);
             double z = start.z + t * (end.z - start.z);
@@ -359,7 +358,7 @@ public class RobotArmKinematics {
                 Point3D achieved = forwardKinematics();
                 double error = target.distanceTo(achieved);
                 
-                if (i % (trajectory.size() / 5) == 0) { // Print every 20% of trajectory
+                if (i % (trajectory.size() / 5) == 0) { //Print every 20% of trajectory
                     System.out.printf("Step %d: Target %s -> Achieved %s (Error: %.4f)%n", 
                         i, target, achieved, error);
                 }
@@ -391,13 +390,13 @@ public class RobotArmKinematics {
     public static void main(String[] args) {
         System.out.println("Robot Arm Kinematics - Demonstration\n");
         
-        // Test 1: Forward Kinematics
+        //Test 1: Forward Kinematics
         System.out.println("Test 1: Forward Kinematics");
         System.out.println("---------------------------");
         
         RobotArmKinematics arm = new RobotArmKinematics();
         
-        // Set some joint angles
+        //Set some joint angles
         double[] testAngles = {Math.PI/4, Math.PI/6, -Math.PI/4, 0, Math.PI/8, 0};
         arm.setJointAngles(testAngles);
         
@@ -407,7 +406,7 @@ public class RobotArmKinematics {
         
         System.out.println("\n" + "=".repeat(50));
         
-        // Test 2: Inverse Kinematics
+        //Test 2: Inverse Kinematics
         System.out.println("\nTest 2: Inverse Kinematics");
         System.out.println("---------------------------");
         
@@ -428,13 +427,13 @@ public class RobotArmKinematics {
         
         System.out.println("\n" + "=".repeat(50));
         
-        // Test 3: Workspace Analysis
+        //Test 3: Workspace Analysis
         System.out.println("\nTest 3: Workspace Analysis");
         System.out.println("---------------------------");
         
         List<Point3D> workspace = arm.generateWorkspace(1000);
         
-        // Analyze workspace
+        //Analyze workspace
         double maxX = workspace.stream().mapToDouble(p -> p.x).max().orElse(0);
         double minX = workspace.stream().mapToDouble(p -> p.x).min().orElse(0);
         double maxY = workspace.stream().mapToDouble(p -> p.y).max().orElse(0);
@@ -447,7 +446,7 @@ public class RobotArmKinematics {
         System.out.printf("  Y: %.3f to %.3f (range: %.3f)%n", minY, maxY, maxY - minY);
         System.out.printf("  Z: %.3f to %.3f (range: %.3f)%n", minZ, maxZ, maxZ - minZ);
         
-        // Test some points
+        //Test some points
         Point3D[] testPoints = {
             new Point3D(1.0, 0.5, 0.2),
             new Point3D(2.5, 1.5, 1.0),
@@ -463,7 +462,7 @@ public class RobotArmKinematics {
         
         System.out.println("\n" + "=".repeat(50));
         
-        // Test 4: Trajectory Planning
+        //Test 4: Trajectory Planning
         System.out.println("\nTest 4: Trajectory Planning");
         System.out.println("----------------------------");
         
@@ -483,11 +482,11 @@ public class RobotArmKinematics {
         
         System.out.println("\n" + "=".repeat(50));
         
-        // Test 5: 2-DOF Analytical Solution
+        //Test 5: 2-DOF Analytical Solution
         System.out.println("\nTest 5: 2-DOF Analytical Inverse Kinematics");
         System.out.println("---------------------------------------------");
         
-        // Create a simple 2-DOF arm for analytical solution
+        //Create a simple 2-DOF arm for analytical solution
         RobotArmKinematics arm2DOF = new RobotArmKinematics();
         arm2DOF.joints.clear();
         arm2DOF.joints.add(new Joint("Joint1", 1.0, -Math.PI, Math.PI));

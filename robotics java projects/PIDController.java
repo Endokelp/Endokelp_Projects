@@ -6,14 +6,14 @@ import java.util.*;
  * Essential for robotics applications requiring accurate positioning and movement
  */
 public class PIDController {
-    private double kp, ki, kd; // PID constants
+    private double kp, ki, kd; //PID constants
     private double previousError = 0;
     private double integral = 0;
     private double setpoint = 0;
     private double outputMin = -100, outputMax = 100;
     private long lastTime = 0;
     
-    // Constructor
+    //Constructor
     public PIDController(double kp, double ki, double kd) {
         this.kp = kp;
         this.ki = ki;
@@ -28,30 +28,30 @@ public class PIDController {
      */
     public double calculate(double currentValue) {
         long currentTime = System.currentTimeMillis();
-        double deltaTime = (currentTime - lastTime) / 1000.0; // Convert to seconds
+        double deltaTime = (currentTime - lastTime) / 1000.0; //Convert to seconds
         
-        if (deltaTime <= 0) deltaTime = 0.001; // Prevent division by zero
+        if (deltaTime <= 0) deltaTime = 0.001; //Prevent division by zero
         
         double error = setpoint - currentValue;
         
-        // Proportional term
+        //Proportional term
         double proportional = kp * error;
         
-        // Integral term
+        //Integral term
         integral += error * deltaTime;
         double integralTerm = ki * integral;
         
-        // Derivative term
+        //Derivative term
         double derivative = (error - previousError) / deltaTime;
         double derivativeTerm = kd * derivative;
         
-        // Calculate total output
+        //Calculate total output
         double output = proportional + integralTerm + derivativeTerm;
         
-        // Apply output limits
+        //Apply output limits
         output = Math.max(outputMin, Math.min(outputMax, output));
         
-        // Update for next iteration
+        //Update for next iteration
         previousError = error;
         lastTime = currentTime;
         
@@ -123,15 +123,15 @@ public class PIDController {
     }
     
     private double findCriticalGain(MotorSimulator motor, double targetValue) {
-        // Simplified critical gain finding
-        // In practice, this would involve more sophisticated oscillation detection
+        //Simplified critical gain finding
+        //In practice, this would involve more sophisticated oscillation detection
         double testGain = 0.1;
         
         while (testGain < 10.0) {
             PIDController testController = new PIDController(testGain, 0, 0);
             testController.setSetpoint(targetValue);
             
-            // Test for oscillation
+            //Test for oscillation
             if (testForOscillation(testController, motor, targetValue)) {
                 return testGain;
             }
@@ -139,11 +139,11 @@ public class PIDController {
             testGain += 0.1;
         }
         
-        return -1; // No critical gain found
+        return -1; //No critical gain found
     }
     
     private boolean testForOscillation(PIDController controller, MotorSimulator motor, double target) {
-        // Simplified oscillation test
+        //Simplified oscillation test
         double[] values = new double[20];
         motor.reset();
         
@@ -159,9 +159,9 @@ public class PIDController {
             }
         }
         
-        // Check for oscillation pattern (simplified)
+        //Check for oscillation pattern (simplified)
         double variance = calculateVariance(values);
-        return variance > 0.1; // Threshold for oscillation detection
+        return variance > 0.1; //Threshold for oscillation detection
     }
     
     private double calculateVariance(double[] values) {
@@ -183,12 +183,12 @@ public class PIDController {
         private final double maxAcceleration = 5.0;
         
         public void update(double controlSignal) {
-            // Simulate motor dynamics
+            //Simulate motor dynamics
             acceleration = Math.max(-maxAcceleration, 
                           Math.min(maxAcceleration, controlSignal * 0.1));
             
-            velocity += acceleration * 0.02; // dt = 0.02s
-            velocity *= (1 - friction); // Apply friction
+            velocity += acceleration * 0.02; //dt = 0.02s
+            velocity *= (1 - friction); //Apply friction
             
             position += velocity * 0.02;
         }
@@ -214,14 +214,14 @@ public class PIDController {
     public static void main(String[] args) {
         System.out.println("PID Controller for Robotics - Demonstration\n");
         
-        // Test 1: Basic PID control
+        //Test 1: Basic PID control
         System.out.println("Test 1: Basic PID Control");
         System.out.println("--------------------------");
         
         PIDController pid = new PIDController(2.0, 0.1, 0.05);
         MotorSimulator motor = new MotorSimulator();
         
-        pid.setSetpoint(10.0); // Target position
+        pid.setSetpoint(10.0); //Target position
         pid.setOutputLimits(-50, 50);
         
         System.out.println("Target: 10.0 units");
@@ -234,14 +234,13 @@ public class PIDController {
             double output = pid.calculate(currentPos);
             motor.update(output);
             
-            double[] state = motor.getState();
             
             if (i % 10 == 0) {
                 System.out.printf("Time: %.2fs, Position: %.2f, Error: %.2f%n", 
                     i * 0.02, currentPos, error);
             }
             
-            // Detailed output every few steps
+            //Detailed output every few steps
             if (i < 50 && i % 1 == 0) {
                 double proportional = pid.kp * error;
                 double integralTerm = pid.ki * pid.integral;
@@ -252,7 +251,7 @@ public class PIDController {
             }
             
             try {
-                Thread.sleep(20); // 20ms delay
+                Thread.sleep(20); //20ms delay
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 break;
@@ -262,7 +261,7 @@ public class PIDController {
         System.out.printf("\nFinal Position: %.2f (Target: %.2f)\n\n", 
             motor.getCurrentPosition(), pid.setpoint);
         
-        // Test 2: Auto-tuning demonstration
+        //Test 2: Auto-tuning demonstration
         System.out.println("Test 2: Auto-Tuning Demonstration");
         System.out.println("-----------------------------------");
         
@@ -288,15 +287,15 @@ public class PIDController {
             }
         }
         
-        // Test 3: Comparing different PID configurations
+        //Test 3: Comparing different PID configurations
         System.out.println("\n\nTest 3: Comparing PID Configurations");
         System.out.println("-------------------------------------\n");
         
         double[][] configs = {
-            {1.0, 0.0, 0.0},   // P-only
-            {1.0, 0.1, 0.0},   // PI
-            {1.0, 0.0, 0.05},  // PD
-            {1.0, 0.1, 0.05}   // Full PID
+            {1.0, 0.0, 0.0},   //P-only
+            {1.0, 0.1, 0.0},   //PI
+            {1.0, 0.0, 0.05},  //PD
+            {1.0, 0.1, 0.05}   //Full PID
         };
         
         String[] names = {"P-only Controller", "PI Controller", "PD Controller", "Full PID Controller"};
@@ -307,7 +306,7 @@ public class PIDController {
             
             testPID.setSetpoint(8.0);
             
-            // Run for 100 steps
+            //Run for 100 steps
             for (int i = 0; i < 100; i++) {
                 double output = testPID.calculate(testMotor.getCurrentPosition());
                 testMotor.update(output);
