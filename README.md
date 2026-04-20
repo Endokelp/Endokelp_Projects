@@ -1,38 +1,38 @@
 # Endokelp_Projects
 
-Public repo for smaller projects. Mix of school work, random experiments, and stuff aimed at quant or ML-ish topics.
-
-If a folder looks half finished, it probably is.
-
-## PythonProjects
-
-Python I am okay showing publicly: scripts with context, not just one off files.
-
-### Math IA (IB)
-
-**Folder:** `PythonProjects/portfolio_mpt/`
-
-This is my IB Math Internal Assessment work. Same codebase as the mean variance and portfolio bits in that folder: data from Yahoo (`yfinance`), efficient frontier and Monte Carlo style weight experiments, longer multi asset backtest plots, plus a separate stats exercise (`analyze_bench_press.py`) that lived in the same repo for convenience. Details and run order are in `PythonProjects/portfolio_mpt/README.md`.
-
-Not trading advice. Not a graded submission dump (no personal PDFs or Word uploads there on purpose).
-
-### Planned later (not the IA)
-
-Rough order for future projects I still want to add here:
-
-1. Volatility targeting  
-2. Momentum backtest written without a black box backtest library  
-3. Monte Carlo / GBM  
-4. Black-Scholes plus Greeks  
-5. Small portfolio risk dashboard (Streamlit or similar)
-
-## What is here
-
-- **UltimateEven_Odd.java:** CLI, numbers in, even or odd labels, optional basic stats.  
-- **snake_game.py:** Snake with optional chasing enemies, two maps, speeds, persistent high score.  
-- **ProfessionalPersonalWebsiteTemplate/:** Vite and React portfolio template.  
-- **robotics java projects/:** Older Java coursework.
+Public repo where I stash smaller projects: coursework, experiments, and random builds. If something looks rough, it probably is.
 
 ---
 
-Pick a folder and dig. Future me: commit more than once every six months.
+## Python projects
+
+**MPT** (`PythonProjects/portfolio_mpt/`)
+
+This is a mean variance portfolio playground. It pulls stock prices from Yahoo, builds expected returns and a covariance matrix, then runs the usual optimization stuff: efficient frontier, tangency portfolio, equal weight and MVP comparisons, and a Monte Carlo pass that draws random long only weights so you can see how scattered outcomes are. There is also a longer multi asset backtest path with correlation heatmaps, drawdowns, and equity style plots if you feed it the bigger workbook, plus a small unrelated stats script for a strength vs endurance scatter. Plots use a shared matplotlib style so they are not the default neon homework look. Not trading advice. More detail and run commands are in that folder’s README.
+
+---
+
+## Robotics projects
+
+Old Java coursework style demos: grids, fake sensors, and console output, not real hardware.
+
+A. `AutonomousNavigation.java`  
+B. `PIDController.java`  
+C. `RobotArmKinematics.java`  
+D. `RobotCommunication.java`, `SensorFusion.java`, `VisionProcessing.java`  
+
+---
+
+## Portfolio template
+
+`ProfessionalPersonalWebsiteTemplate/` is the codebase behind my portfolio site **endokelp.com**. Fork or copy it if you want a starting point or layout ideas. It is Vite, React, TypeScript, and Tailwind.
+
+---
+
+## Snake game
+
+`snake_game.py` is Snake with optional chasing enemies, two maps, speed levels, and a high score file that persists.
+
+## Ultimate even / odd
+
+`UltimateEven_Odd.java` is a CLI: you type numbers, it prints them back labeled even or odd, and can show basic list stats if you want.
