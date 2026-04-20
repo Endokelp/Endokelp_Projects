@@ -13,34 +13,15 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    id: 'companyA',
-    title: 'Software Engineer',
-    company: 'Company A',
-    date: 'Jan 2022 – Present',
+    id: 'public',
+    title: 'Projects & coursework',
+    company: 'GitHub',
+    date: 'ongoing',
     description: [
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    ]
+      'Public code is under github.com/Endokelp (games, templates, Java homework, Python experiments).',
+      'I’m not inventing fake company names here—if I add a real job later, it’ll show up in this section.',
+    ],
   },
-  {
-    id: 'companyB',
-    title: 'Frontend Developer',
-    company: 'Company B',
-    date: 'May 2020 – Dec 2021',
-    description: [
-      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-    ]
-  },
-  {
-    id: 'companyC',
-    title: 'Web Developer Intern',
-    company: 'Company C',
-    date: 'Jun 2019 – Aug 2019',
-    description: [
-      'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-    ]
-  }
 ];
 
 const Experience: React.FC = () => {

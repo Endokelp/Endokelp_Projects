@@ -6,12 +6,10 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-400 mb-4 md:mb-0">
-            Designed & Built by [Your Name]
+            Built by Venkata Anirudh (template hacked on over time)
           </p>
           
-          <p className="text-sm text-gray-400 mt-2">
-            © {new Date().getFullYear()} All Rights Reserved
-          </p>
+          <p className="text-sm text-gray-400 mt-2">{new Date().getFullYear()}</p>
         </div>
       </div>
     </footer>
