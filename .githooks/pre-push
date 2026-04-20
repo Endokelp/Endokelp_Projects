@@ -1,3 +1,0 @@
-#!/bin/sh
-ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-exec python "$ROOT/PythonProjects/portfolio_mpt/scripts/vibe_detective.py" --root "$ROOT/PythonProjects/portfolio_mpt"

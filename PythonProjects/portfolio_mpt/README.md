@@ -23,12 +23,4 @@ python dissertation_analysis.py
 python analyze_bench_press.py
 ```
 
-## Before `git push`
-
-```bash
-python scripts/vibe_detective.py
-```
-
-Optional: paste `scripts/DETECTIVE_TASK.txt` into a Task for a second pass. Hook (monorepo root): `git config core.hooksPath .githooks`.
-
 Not trading advice. Course submission PDFs/DOCX aren’t in this tree on purpose.
