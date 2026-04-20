@@ -1,35 +1,38 @@
 # Endokelp_Projects
 
-Public repo where I dump smaller projects. Some of it is school stuff, some is “I was bored,” and I’m slowly aiming more of it at quant / ML-type work.
+Public repo for smaller projects. Mix of school work, random experiments, and stuff aimed at quant or ML-ish topics.
 
-If a folder looks half-done, it probably is.
+If a folder looks half finished, it probably is.
 
 ## PythonProjects
 
-Folder for Python that I’m willing to show on a resume: not just scripts—more like small projects with a README and (eventually) tests.
+Python I am okay showing publicly: scripts with context, not just one off files.
 
-Rough order I want to tackle:
+### Math IA (IB)
+
+**Folder:** `PythonProjects/portfolio_mpt/`
+
+This is my IB Math Internal Assessment work. Same codebase as the mean variance and portfolio bits in that folder: data from Yahoo (`yfinance`), efficient frontier and Monte Carlo style weight experiments, longer multi asset backtest plots, plus a separate stats exercise (`analyze_bench_press.py`) that lived in the same repo for convenience. Details and run order are in `PythonProjects/portfolio_mpt/README.md`.
+
+Not trading advice. Not a graded submission dump (no personal PDFs or Word uploads there on purpose).
+
+### Planned later (not the IA)
+
+Rough order for future projects I still want to add here:
 
 1. Volatility targeting  
-2. Momentum backtest, written myself instead of leaning on a black-box library  
+2. Momentum backtest written without a black box backtest library  
 3. Monte Carlo / GBM  
-4. Black–Scholes + Greeks  
-5. A tiny portfolio risk dashboard (Streamlit or similar)
+4. Black-Scholes plus Greeks  
+5. Small portfolio risk dashboard (Streamlit or similar)
 
-Not financial advice. Just practice.
+## What is here
 
-**Python — portfolio MPT / tech sleeve** (`PythonProjects/portfolio_mpt/`)  
-Mean–variance frontier, Monte Carlo scatter of random weights, and a longer multi-asset backtest with heatmaps and drawdown plots. Prices from Yahoo via `yfinance`; plot defaults tweaked in `src/plot_style.py`. Not investment advice.
-
-There’s a `scripts/vibe_detective.py` gremlin hunt plus `scripts/DETECTIVE_TASK.txt` for a manual Task pass before push; optional hook: `git config core.hooksPath .githooks`.
-
-## What’s here
-
-- **UltimateEven_Odd.java** — CLI: numbers in, even/odd out, optional basic stats.  
-- **snake_game.py** — snake with optional chasing enemies, two maps, speeds, persistent high score.  
-- **ProfessionalPersonalWebsiteTemplate/** — the Vite/React portfolio template.  
-- **robotics java projects/** — old Java coursework snippets.
+- **UltimateEven_Odd.java:** CLI, numbers in, even or odd labels, optional basic stats.  
+- **snake_game.py:** Snake with optional chasing enemies, two maps, speeds, persistent high score.  
+- **ProfessionalPersonalWebsiteTemplate/:** Vite and React portfolio template.  
+- **robotics java projects/:** Older Java coursework.
 
 ---
 
-Pick a folder and go. Future me: commit more than once every six months.
+Pick a folder and dig. Future me: commit more than once every six months.
