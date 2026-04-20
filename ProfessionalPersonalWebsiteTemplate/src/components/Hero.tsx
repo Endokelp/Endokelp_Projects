@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
               className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 opacity-0 transform translate-y-4 transition-all duration-700 delay-300 ease-out"
               ref={nameRef}
             >
-              [Your Name]
+              Venkata Anirudh
             </h1>
             <h2 
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-300 mb-6 opacity-0 transform translate-y-4 transition-all duration-700 delay-700 ease-out"
@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
               I build things for the web.
             </h2>
             <p className="text-lg text-gray-400 mb-8 max-w-2xl leading-relaxed">
-              I'm a software developer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products at [Your Company/Project].
+              I mess with web stuff and whatever class projects pile up. This site is mostly a playground—swap the text if you forked the template.
             </p>
             <div className="flex flex-wrap gap-4">
               <a 

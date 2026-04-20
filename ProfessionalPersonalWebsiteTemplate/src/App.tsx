@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     // Set page title
-    document.title = "[Your Name] - Portfolio";
+    document.title = 'Venkata Anirudh - Portfolio';
   }, []);
 
   useEffect(() => {
