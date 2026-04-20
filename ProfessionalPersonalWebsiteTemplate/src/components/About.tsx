@@ -15,28 +15,28 @@ const About: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start mt-12">
           <div className="md:col-span-2 opacity-0" ref={textRef}>
             <p className="text-white/90 dark:text-gray-300 mb-4 leading-relaxed drop-shadow-lg">
-              I'm a passionate developer and aspiring innovator based in [Your City, State].
+              Student / builder type. Location changes depending on semester—figure I’ll leave it vague here.
             </p>
             
             <p className="text-gray-300 mb-4 leading-relaxed">
-              I love solving meaningful problems with code. My interests span [Your Interests]. Over the last year, I've built various projects that showcase my skills.
+              I like small tools, games, and the occasional finance-adjacent side project. Nothing here is claiming I’m a senior engineer at a FAANG.
             </p>
             
             <p className="text-gray-300 mb-4 leading-relaxed">
-              My goal is to build transformative products and grow as a developer. I'm constantly learning and building to make that vision a reality.
+              This portfolio template is something I tinker with when I get tired of looking at the default Vite page.
             </p>
             
             <p className="text-gray-300 mb-6 leading-relaxed">
-              When I'm not coding, you can find me [Your Hobbies/Activities].
+              Offline I’m usually cooking badly, walking, or losing at something competitive.
             </p>
             
             <div className="bg-white/5 dark:bg-gray-800/50 rounded-lg p-6 border border-white/10 dark:border-gray-700">
               <h3 className="text-lg font-semibold text-white mb-3 flex items-center">
                 <span className="text-indigo-400 mr-2">💡</span>
-                What is [Your Persona/Project Name]?
+                What is “Endokelp”?
               </h3>
               <p className="text-gray-300 leading-relaxed">
-                [Your Persona/Project Name] is my online persona. [Add a brief, generalized description here].
+                Just a handle I use on GitHub. Not a company, not a framework—only a username.
               </p>
             </div>
           </div>
@@ -44,7 +44,7 @@ const About: React.FC = () => {
           <div className="relative group opacity-0" ref={imageRef}>
             <div className="relative rounded-lg overflow-hidden border-2 border-indigo-600/20 dark:border-indigo-400/20">
               <div className="w-full h-80 bg-gray-200 dark:bg-gray-700 rounded-lg shadow-lg flex items-center justify-center">
-                <span className="text-gray-500 dark:text-gray-400 text-lg font-medium">Insert Picture Here</span>
+                <span className="text-gray-500 dark:text-gray-400 text-lg font-medium">No photo yet</span>
               </div>
               <div className="absolute inset-0 bg-indigo-600/10 dark:bg-indigo-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>

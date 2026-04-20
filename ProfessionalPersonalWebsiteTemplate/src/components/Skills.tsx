@@ -10,20 +10,20 @@ interface SkillCategory {
 const skillCategories: SkillCategory[] = [
   {
     name: 'Languages',
-    skills: ['JavaScript (ES6+)', 'TypeScript', 'Python', 'HTML/CSS']
+    skills: ['JavaScript', 'TypeScript', 'Python', 'Java', 'HTML/CSS'],
   },
   {
     name: 'Frameworks',
-    skills: ['React', 'Vue', 'Node.js', 'Express']
+    skills: ['React', 'Tailwind'],
   },
   {
     name: 'Tools',
-    skills: ['Webpack', 'Babel', 'Git & GitHub', 'Docker', 'Figma']
+    skills: ['Vite', 'Git', 'npm', 'ESLint'],
   },
   {
     name: 'Other',
-    skills: ['Agile Methodologies', 'CI/CD', 'Testing (Jest, Cypress)']
-  }
+    skills: ['School assignments', 'Stack Overflow', 'Over-caffeinating'],
+  },
 ];
 
 const Skills: React.FC = () => {
