@@ -1,3 +1,4 @@
+import os
 import sys
 
 import numpy as np
@@ -103,7 +104,7 @@ for tr in target_returns:
     else:
         efficient_vols.append(None)
 
-# 5. Save comprehensive results
+# 5. Dump weights / stats to text
 with open("opt_results.txt", "w") as f:
     f.write("--- Strategy Comparison Analysis ---\n\n")
     f.write("1. Minimum Variance Portfolio (MVP):\n")
@@ -190,8 +191,8 @@ for i, ticker in enumerate(tickers):
 
 ax.set_xlabel("Annualized volatility")
 ax.set_ylabel("Annualized expected return")
-ax.set_title("Frontier vs. benchmarks (tech sleeve, historical μ, Σ)")
-subtitle(ax, "AAPL · MSFT · GOOGL · NVDA · PLTR — daily log returns, annualized")
+ax.set_title("Efficient frontier vs benchmarks")
+subtitle(ax, "AAPL MSFT GOOGL NVDA PLTR — daily log returns, annualized")
 ax.legend(loc="lower right", fontsize=9)
 finish_figure(fig)
 out = "research_comparison_frontier.png"

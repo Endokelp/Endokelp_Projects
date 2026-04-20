@@ -82,7 +82,7 @@ def generate_ia():
     
     m2 = (
         "Log returns are advantageous because they are time-consistent. The return over a period of n days is the sum of the daily log returns: "
-        "Σ rᵢ = ln(Pₙ/P₀). Furthermore, log returns more closely follow a normal distribution, which is a key assumption for the standard MPT model."
+        "Σ rᵢ = ln(Pₙ/P₀). Log returns more closely follow a normal distribution, which is a key assumption for the standard MPT model."
     )
     doc.add_paragraph(m2)
     
@@ -255,7 +255,7 @@ def generate_ia():
     
     doc.add_heading('6.2 Temporal Instability of Covariance', level=2)
     ref_text2 = (
-        "Furthermore, MPT assumes that the relationships between stocks (covariance) are static. This is historically false. "
+        "MPT also assumes that the relationships between stocks (covariance) are static. This is historically false. "
         "In periods of 'Market Stress', correlations tend to jump toward 1.0. For instance, while Google and Nvidia may "
         "decouple during a normal trading month, they both crashed during the February 2022 inflation spike. "
         "This 'Correlation Breakdown' implies that diversification fails exactly when it is needed most to protect capital. "
@@ -266,7 +266,7 @@ def generate_ia():
     # --- 7. Conclusion ---
     doc.add_heading('7. Conclusion', level=1)
     conc_text = (
-        "This investigation successfully demonstrated that Modern Portfolio Theory can be used to mathematically minimize risk "
+        "This investigation shows that Modern Portfolio Theory can be used to mathematically minimize risk "
         "for a technology portfolio. By solving for the 20% target return, I found an allocation that yielded a volatility of 24.50%, "
         "representing a significant improvement over unoptimized strategies. \n\n"
         "While the limitations of normality assumptions and historical bias are present, the exploration underscores a vital "

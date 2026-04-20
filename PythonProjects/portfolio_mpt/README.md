@@ -1,30 +1,34 @@
 # portfolio_mpt
 
-Scratch-paper quant work: mean–variance stuff on a handful of tech names, plus a messier multi-asset backtest / HRP experiment that grew out of the same thread.
+Scratch-paper quant: mean–variance on a few tech names, plus a longer multi-asset backtest / HRP experiment.
 
-## What’s actually in here
+## What’s in here
 
-- **`src/data_loader.py`** — pulls adjusted closes from Yahoo, writes `IA_Portfolio_Data.xlsx` (means, covariance, etc.). Run this first if you’re cloning cold.
-- **`calculate_ia_data.py`** — MVP, tangency, equal-weight, efficient frontier + CML; saves `research_comparison_frontier.png` and `opt_results.txt`.
-- **`monte_carlo_sim.py`** — random long-only weights against the same μ and Σ; `monte_carlo_portfolios.png`.
-- **`dissertation_analysis.py`** — longer backtest + correlation heatmap, dendrogram, rolling corr, drawdowns, equity curves. Needs `Dissertation_Full_Data.xlsx`. Outputs `dissertation_*.png` and `dissertation_backtest_metrics.csv`.
-- **`analyze_bench_press.py`** — unrelated stats class exercise (strength vs endurance); two scatter PNGs.
+- **`src/data_loader.py`** — Yahoo → `IA_Portfolio_Data.xlsx`
+- **`calculate_ia_data.py`** — frontier, MVP, tangency, equal weight
+- **`monte_carlo_sim.py`** — random weights
+- **`dissertation_analysis.py`** — heatmap, dendrogram, rolling corr, drawdowns, equity curves (`Dissertation_Full_Data.xlsx`)
+- **`analyze_bench_press.py`** — separate class exercise
 
-Plot styling lives in **`src/plot_style.py`** so the figures don’t all look like default matplotlib homework.
+**`src/plot_style.py`** — matplotlib rcParams + fixed colors.
 
 ## Setup
 
 ```bash
 pip install -r requirements.txt
-python src/data_loader.py          # optional: refresh Excel from Yahoo
+python src/data_loader.py
 python calculate_ia_data.py
 python monte_carlo_sim.py
-python dissertation_analysis.py    # if you have the dissertation workbook
+python dissertation_analysis.py
 python analyze_bench_press.py
 ```
 
-## What I’m not claiming
+## Before `git push`
 
-This isn’t trading advice, not a product, and not a promise that any of these weights would have been tradable with zero slippage. It’s code I wrote to understand the math and stress how sensitive optimization is to inputs.
+```bash
+python scripts/vibe_detective.py
+```
 
-Personal submission PDFs / Word docs aren’t in this folder on purpose.
+Optional: paste `scripts/DETECTIVE_TASK.txt` into a Task for a second pass. Hook (monorepo root): `git config core.hooksPath .githooks`.
+
+Not trading advice. Course submission PDFs/DOCX aren’t in this tree on purpose.

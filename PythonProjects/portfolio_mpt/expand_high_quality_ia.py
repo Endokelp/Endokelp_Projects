@@ -211,7 +211,7 @@ def generate_expanded_ia():
     p.runs[0].bold = True
     
     doc.add_paragraph(
-        "This property significantly simplifies the statistical modeling of long-term wealth. Furthermore, log returns more closely "
+        "This property significantly simplifies the statistical modeling of long-term wealth. Log returns more closely "
         "follow a normal distribution, which is a key assumption for the standard MPT model."
     )
     
@@ -598,7 +598,7 @@ def generate_expanded_ia():
     
     doc.add_heading('7.2 Temporal Instability of Covariance', level=2)
     doc.add_paragraph(
-        "Furthermore, MPT assumes that the relationships between stocks (covariance) are static. This is historically false. "
+        "MPT also assumes that the relationships between stocks (covariance) are static. This is historically false. "
         "In periods of 'Market Stress', correlations tend to jump toward 1.0. For instance, while Google and Nvidia may "
         "decouple during a normal trading month, they both crashed during the February 2022 inflation spike. "
         "This 'Correlation Breakdown' implies that diversification fails exactly when it is needed most to protect capital."
@@ -615,8 +615,8 @@ def generate_expanded_ia():
         "The Lagrangian method assumes that the solution lies in the interior of the feasible region. However, in practice, "
         "many optimal portfolios involve 'corner solutions' where one or more weights are exactly zero. This is why I imposed "
         "the additional constraint that 0 \u2264 w\u1D62 \u2264 1 (no short-selling), which transforms the problem from a pure Lagrangian "
-        "into a Quadratic Programming (QP) problem. The SLSQP algorithm handles this extension, but it is important to "
-        "acknowledge that the analytical Lagrangian solution and the numerical QP solution may differ when boundary constraints are active."
+        "into a Quadratic Programming (QP) problem. The SLSQP algorithm handles this extension, but "
+        "the analytical Lagrangian solution and the numerical QP solution may differ when boundary constraints are active."
     )
     
     # ========================================================================
@@ -625,7 +625,7 @@ def generate_expanded_ia():
     doc.add_page_break()
     doc.add_heading('8. Conclusion', level=1)
     doc.add_paragraph(
-        "This investigation successfully demonstrated that Modern Portfolio Theory can be used to mathematically minimize risk "
+        "This investigation shows that Modern Portfolio Theory can be used to mathematically minimize risk "
         f"for a technology portfolio. By solving for the 20% target return, I found an allocation that yielded a volatility of {p_risk:.2%}, "
         "representing a significant improvement over unoptimized strategies."
     )
