@@ -1,6 +1,6 @@
 # Endokelp_Projects
 
-This repo is basically my public junk drawer—but organized. I keep small projects here while I learn, break things, and slowly nudge my work toward quant and ML research.
+This repo is basically my public junk drawer (Tried to organize it). I keep small projects here while I learn, break things, and slowly nudge my work toward quant and ML research.
 
 If something looks half-finished, it probably is.
 
@@ -27,7 +27,7 @@ A console program that takes numbers, prints them back, labels even vs odd, and 
 Snake, but a little unhinged: you can spawn enemies that chase you Pac-Man ghost style, there are two maps, three speed levels, and a high score file that actually persists (so your best run sticks around).
 
 **Website template** (`ProfessionalPersonalWebsiteTemplate/`)  
-A Vite + React template I made for portfolio sites—mostly so future-me doesn’t start from a blank folder every time.
+A Vite + React template I made for portfolio sites, mostly so future-me doesn’t start from a blank folder every time.
 
 ## Robotics
 
