@@ -67,7 +67,7 @@ const Header: React.FC<HeaderProps> = () => {
             className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
             onClick={scrollToTop}
           >
-            <span className="text-indigo-600 dark:text-indigo-400">[Your Name]</span>
+            <span className="text-indigo-600 dark:text-indigo-400">Venkata Anirudh</span>
           </a>
           
           <div className="flex items-center space-x-4">

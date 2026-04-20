@@ -1,41 +1,33 @@
 # Endokelp_Projects
 
-This repo is basically my public junk drawer—but organized. I keep small projects here while I learn, break things, and slowly nudge my work toward quant and ML research.
+Public repo where I dump smaller projects. Some of it is school stuff, some is “I was bored,” and I’m slowly aiming more of it at quant / ML-type work.
 
-If something looks half-finished, it probably is.
+If a folder looks half-done, it probably is.
 
 ## PythonProjects
 
-I added a `PythonProjects/` folder for Python work that’s a bit more “portfolio-shaped.” The idea is to collect a few end-to-end projects I can point to on a resume: data in, assumptions explicit, tests where it matters, and a README that explains what I did (and what I didn’t claim).
+Folder for Python that I’m willing to show on a resume: not just scripts—more like small projects with a README and (eventually) tests.
 
-What I’m planning to build there, in order:
+Rough order I want to tackle:
 
-1. **Volatility targeting** — scale exposure to chase a vol target without pretending the world is neat and stationary.
-2. **Momentum backtest (from scratch)** — signals, rebalances, costs, and the boring stuff that keeps a backtest honest.
-3. **Monte Carlo (GBM)** — simulate paths, check convergence, maybe poke at variance reduction if I’m feeling brave.
-4. **Options pricing (Black–Scholes)** — Europeans, Greeks, and tests against reference cases so I’m not just trusting a formula I copied.
-5. **Portfolio risk dashboard** — a small Streamlit (or similar) front-end on top of an analytics core I can actually unit test.
+1. Volatility targeting  
+2. Momentum backtest, written myself instead of leaning on a black-box library  
+3. Monte Carlo / GBM  
+4. Black–Scholes + Greeks  
+5. A tiny portfolio risk dashboard (Streamlit or similar)
 
-Nothing here is production trading advice. It’s practice.
+Not financial advice. Just practice.
 
 **Python — portfolio MPT / tech sleeve** (`PythonProjects/portfolio_mpt/`)  
 Mean–variance frontier, Monte Carlo scatter of random weights, and a longer multi-asset backtest with heatmaps and drawdown plots. Data mostly comes from Yahoo via `yfinance`; figures use a small custom matplotlib style so they’re not the default blue/orange template look. Not investment advice—just math I wanted to see on real-ish inputs.
 
-## What’s here right now
+## What’s here
 
-**Java — Ultimate even/odd** (`UltimateEven_Odd.java`)  
-A console program that takes numbers, prints them back, labels even vs odd, and can optionally spit out basic list stats (mean, mode, standard deviation, that kind of thing).
-
-**Python — Snake** (`snake_game.py`)  
-Snake, but a little unhinged: you can spawn enemies that chase you Pac-Man ghost style, there are two maps, three speed levels, and a high score file that actually persists (so your best run sticks around).
-
-**Website template** (`ProfessionalPersonalWebsiteTemplate/`)  
-A Vite + React template I made for portfolio sites—mostly so future-me doesn’t start from a blank folder every time.
-
-## Robotics
-
-There’s also a `robotics java projects/` folder for older coursework-style Java bits.
+- **UltimateEven_Odd.java** — CLI: numbers in, even/odd out, optional basic stats.  
+- **snake_game.py** — snake with optional chasing enemies, two maps, speeds, persistent high score.  
+- **ProfessionalPersonalWebsiteTemplate/** — the Vite/React portfolio template.  
+- **robotics java projects/** — old Java coursework snippets.
 
 ---
 
-If you’re browsing: start with whatever folder matches the language you care about. If you’re me, six months from now: please remember to commit more often.
+Pick a folder and go. Future me: commit more than once every six months.
