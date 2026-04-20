@@ -19,7 +19,7 @@ To answer this, I will derive the Efficient Frontier, calculate the Minimum Vari
 To solve this, I will use Logarithmic Returns (rₜ), which are derived using the natural logarithm:
 
 17: rₜ = ln( Pₜ / Pₜ₋₁ )
-18: Log returns are advantageous because they are time-consistent. The return over a period of n days is the sum of the daily log returns: Σ rᵢ = ln(Pₙ/P₀). Furthermore, log returns more closely follow a normal distribution, which is a key assumption for the standard MPT model.
+18: Log returns are advantageous because they are time-consistent. The return over a period of n days is the sum of the daily log returns: Σ rᵢ = ln(Pₙ/P₀). Log returns also follow a normal distribution more closely, which is a key assumption for the standard MPT model.
 19: 2.2 Statistical Metrics: Mean and Variance
 20: The expected return (μ) of an asset is the arithmetic mean of its historical log returns. To make these figures comparable to annual bank rates or inflation, I annualize these returns by multiplying the daily mean by the number of trading days (N=252):
 
@@ -72,9 +72,9 @@ Calculated Portfolio Volatility: 24.50%
 48: 6.1 Normality and The Kurtosis Problem
 49: A fundamental assumption of my model is that stock returns follow a Normal (Gaussian) distribution. In a normal distribution, significant outliers (3-sigma events) should occur less than 0.3% of the time. However, looking at the data for PLTR and NVDA, I observed 'Fat Tails' or high Kurtosis. During the 2020 pandemic and the 2022 rate-hike cycle, these stocks experienced daily price swings of 10-15% multiple times—events that are statistically 'impossible' under a pure Gaussian model. This means the σ term underestimated the true 'tail risk' of the portfolio.
 50: 6.2 Temporal Instability of Covariance
-51: Furthermore, MPT assumes that the relationships between stocks (covariance) are static. This is historically false. In periods of 'Market Stress', correlations tend to jump toward 1.0. For instance, while Google and Nvidia may decouple during a normal trading month, they both crashed during the February 2022 inflation spike. This 'Correlation Breakdown' implies that diversification fails exactly when it is needed most to protect capital. To improve this investigation, one could use a 'Rolling Covariance' matrix that weighs recent data more heavily than older data.
+51: MPT also assumes that the relationships between stocks (covariance) are static. This is historically false. In periods of 'Market Stress', correlations tend to jump toward 1.0. For instance, while Google and Nvidia may decouple during a normal trading month, they both crashed during the February 2022 inflation spike. This 'Correlation Breakdown' implies that diversification fails exactly when it is needed most to protect capital. To improve this investigation, one could use a 'Rolling Covariance' matrix that weighs recent data more heavily than older data.
 52: 7. Conclusion
-53: This investigation successfully demonstrated that Modern Portfolio Theory can be used to mathematically minimize risk for a technology portfolio. By solving for the 20% target return, I found an allocation that yielded a volatility of 24.50%, representing a significant improvement over unoptimized strategies. 
+53: This investigation shows that Modern Portfolio Theory can be used to mathematically minimize risk for a technology portfolio. By solving for the 20% target return, I found an allocation that yielded a volatility of 24.50%, representing a significant improvement over unoptimized strategies. 
 
 While the limitations of normality assumptions and historical bias are present, the exploration underscores a vital mathematical truth: risk is not an absolute property of an asset, but a relative property determined by its relationship to others. This IA has provided me with a deep appreciation for the intersection of statistical analysis and capital management, proving that even in the chaotic world of stocks, there is an underlying mathematical order that can be leveraged for better outcomes.
 54: Bibliography

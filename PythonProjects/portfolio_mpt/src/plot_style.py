@@ -1,13 +1,8 @@
-"""
-Matplotlib styling for this project — warm paper, muted ink, hand-picked accents.
-Keeps figures from looking like default seaborn/matplotlib demos.
-"""
 from __future__ import annotations
 
 import matplotlib as mpl
-from matplotlib import pyplot as plt
 
-# Palette (picked to sit together; not the stock tab10 cycle)
+# Colors (matplotlib tab10 is ugly on slides; these are fixed hexes)
 PAPER = "#f2efe6"
 INK = "#1f1f1f"
 MUTED = "#5a5855"
@@ -20,11 +15,10 @@ CML = "#5c4a6b"
 SCATTER_TICKER = "#6b6560"
 ACCENT_LINE = "#4a6670"
 
-MONTE_CMAP = "gist_earth"  # earthy, not viridis
+MONTE_CMAP = "gist_earth"
 
 
 def apply_plot_style() -> None:
-    """Call once before plotting."""
     mpl.rcParams.update(
         {
             "figure.facecolor": PAPER,
@@ -72,7 +66,6 @@ def apply_plot_style() -> None:
 
 
 def subtitle(ax, text: str) -> None:
-    """Small caption under the title — reads like a lab notebook note."""
     ax.text(
         0.0,
         1.02,
@@ -87,5 +80,4 @@ def subtitle(ax, text: str) -> None:
 
 
 def finish_figure(fig) -> None:
-    """Tight layout with a little breathing room."""
     fig.tight_layout(pad=1.1)

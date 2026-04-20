@@ -210,7 +210,7 @@ def create_scatter(x, y, label, color_hex, filename):
     xsort = np.sort(np.array(x))
     ax.plot(xsort, p(xsort), color=MUTED, linestyle="--", linewidth=1.35, label=f"OLS line (r = {stats.pearsonr(x, y)[0]:.2f})")
     ax.set_title(f"1RM vs reps @70% — {label}")
-    subtitle(ax, "Classroom dataset; trendline is descriptive, not causal")
+    subtitle(ax, "Class data; OLS line for eyeballing only")
     ax.set_xlabel("1RM (lb)")
     ax.set_ylabel("Reps at 70% 1RM")
     ax.legend(loc="best", fontsize=9)

@@ -37,7 +37,7 @@ def generate_research_paper():
     # --- Abstract ---
     add_heading_styled(doc, 'Abstract', level=1, size=16)
     abstract_text = (
-        "This research paper presents a comprehensive quantitative analysis of Modern Portfolio Theory (MPT) "
+        "This paper looks at Modern Portfolio Theory (MPT) "
         "applied to five prominent technology equities (AAPL, MSFT, GOOGL, NVDA, and PLTR) during the 2020-2025 "
         "market cycle. The study investigates the mathematical efficacy of three distinct allocation strategies: "
         "the Minimum Variance Portfolio (MVP), the Maximum Sharpe Ratio (Tangency) Portfolio, and a Naive Equal-Weighted "
@@ -68,7 +68,7 @@ def generate_research_paper():
     doc.add_paragraph(
         "This paper aims to expand upon the basic MPT framework by conducting a comparative analysis of different optimization "
         "objective functions. We ask: How do different mathematical definitions of 'optimality'—pure risk minimization versus "
-        "risk-adjusted return maximization—perform when applied to a high-beta technology portfolio? Furthermore, we explore "
+        "risk-adjusted return maximization—perform when applied to a high-beta technology portfolio? We also sketch "
         "the theoretical foundations of the Capital Asset Pricing Model (CAPM) and the Efficient Frontier to understand the "
         "geometric relationships between risk and reward in the modern AI bull market."
     )
@@ -99,7 +99,7 @@ def generate_research_paper():
     m1 = doc.add_paragraph("3.1 Continuous Compounding and Log Returns")
     doc.add_paragraph(
         "For a series of discrete prices $P_0, P_1, ..., P_t$, the simple periodic return is defined as $R_t = (P_t - P_{t-1})/P_{t-1}$. "
-        "While intuitive, simple returns lack the property of additivity across time. In this study, we utilize Logarithmic Returns ($r_t$):"
+        "While intuitive, simple returns lack the property of additivity across time. In this study, we use Logarithmic Returns ($r_t$):"
     )
     p = doc.add_paragraph("r_t = ln( P_t / P_{t-1} )")
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -271,7 +271,7 @@ def generate_research_paper():
     add_heading_styled(doc, '7. Conclusion', level=1, size=14)
     doc.add_paragraph(
         "Quantitative portfolio management remains a delicate balance between mathematical precision and economic "
-        "intuition. This study has successfully demonstrated that Mean-Variance Optimization can significantly "
+        "intuition. The runs suggest Mean-Variance Optimization can significantly "
         "improve the efficiency of a high-growth technology portfolio by systematically exploiting the covariance "
         "structures of the assets. We proved that for the 2020-2025 era, a Tangency Portfolio could have achieved "
         "a risk-adjusted return more than double that of a risk-free benchmark.\n\n"

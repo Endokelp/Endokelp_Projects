@@ -26,7 +26,6 @@ from src.plot_style import (
 
 
 def get_hrp_weights(cov, corr):
-    """Hierarchical Risk Parity (HRP) weight calculation — inverse-variance slice used here."""
 
     def get_hrp_allocation(cov_mat, _cluster_items):
         inv_var = 1.0 / np.diag(cov_mat)
@@ -37,7 +36,6 @@ def get_hrp_weights(cov, corr):
 
 
 def get_mvo_weights(mu, cov, target_return=None):
-    """Classical Markowitz Mean-Variance Optimization."""
     n = len(mu)
 
     def obj(w):
@@ -53,13 +51,12 @@ def get_mvo_weights(mu, cov, target_return=None):
 
 
 def run_backtest(prices, rebalance_freq="ME"):
-    """Simple Walk-Forward Backtest Simulator."""
     returns = np.log(prices / prices.shift(1)).dropna()
     tickers = prices.columns
 
     lookback = 252
 
-    strategies = {"MVO (Min Var)": [], "HRP (ML-based)": [], "Equal-Weighted": []}
+    strategies = {"MVO (Min Var)": [], "HRP (inverse-var)": [], "Equal-Weighted": []}
 
     dates = returns.index[lookback:]
     portfolio_values = {k: [1.0] for k in strategies.keys()}
@@ -83,7 +80,7 @@ def run_backtest(prices, rebalance_freq="ME"):
             corr = window.corr()
 
             current_weights["MVO (Min Var)"] = get_mvo_weights(mu, cov)
-            current_weights["HRP (ML-based)"] = get_hrp_weights(cov, corr).values
+            current_weights["HRP (inverse-var)"] = get_hrp_weights(cov, corr).values
             current_weights["Equal-Weighted"] = np.array([1.0 / len(tickers)] * len(tickers))
 
     results_df = pd.DataFrame(portfolio_values, index=returns.index[lookback - 1 :])
@@ -113,8 +110,8 @@ def generate_visual_analytics(prices, returns, backtest_results):
         vmax=1,
         annot_kws={"size": 9, "color": INK},
     )
-    ax.set_title("Who moves with whom (sample correlations)")
-    subtitle(ax, "Multi-asset sleeve — weekly-ish feel, daily returns")
+    ax.set_title("Pairwise correlations")
+    subtitle(ax, "Daily log returns, full sample")
     finish_figure(fig)
     fig.savefig(ROOT / "dissertation_heatmap.png")
     plt.close()
@@ -126,8 +123,8 @@ def generate_visual_analytics(prices, returns, backtest_results):
     link = linkage(squareform(d, checks=False), "single")
     fig, ax = plt.subplots(figsize=(10, 5.5))
     dendrogram(link, labels=list(corr.columns), ax=ax, color_threshold=0, above_threshold_color=MUTED)
-    ax.set_title("Linkage tree (single) — ordering for risk parity intuition")
-    subtitle(ax, "Distance = √(0.5(1 − ρ)); not a forecast, just geometry")
+    ax.set_title("Single-linkage tree from correlation distance")
+    subtitle(ax, "Distance = √(0.5(1 − ρ))")
     plt.setp(ax.get_xticklabels(), rotation=35, ha="right", fontsize=9)
     finish_figure(fig)
     fig.savefig(ROOT / "dissertation_dendrogram.png")
@@ -146,8 +143,8 @@ def generate_visual_analytics(prices, returns, backtest_results):
     )
     ax.set_ylabel("Correlation")
     ax.set_xlabel("Date")
-    ax.set_title("When tech and the index hug each other")
-    subtitle(ax, "Rolling 252 trading days — correlation isn’t static")
+    ax.set_title("NVDA vs SPY, rolling 1y correlation")
+    subtitle(ax, "252 trading days")
     ax.legend(loc="lower left", fontsize=9)
     finish_figure(fig)
     fig.savefig(ROOT / "dissertation_rolling_corr.png")
@@ -167,8 +164,8 @@ def generate_visual_analytics(prices, returns, backtest_results):
             color=series_colors[idx % len(series_colors)],
         )
     ax.set_ylabel("Drawdown (fraction of peak)")
-    ax.set_title("Underwater curves — same clock, different weights")
-    subtitle(ax, "Walk-forward min-var / HRP / equal weight (see script for rules)")
+    ax.set_title("Drawdowns")
+    subtitle(ax, "Min-var / HRP / equal weight; rules in script")
     ax.legend(loc="lower left", fontsize=9)
     finish_figure(fig)
     fig.savefig(ROOT / "dissertation_drawdowns.png")
@@ -197,8 +194,8 @@ def main():
         )
     ax.set_xlabel("Date")
     ax.set_ylabel("Growth of $1")
-    ax.set_title("Backtest lines — toy simulator, not a live strategy")
-    subtitle(ax, "Monthly-ish rebalance on rolling 1y window; costs not modeled")
+    ax.set_title("Cumulative $1 (backtest script)")
+    subtitle(ax, "~monthly rebalance, 1y rolling window; no costs")
     ax.legend(loc="upper left", fontsize=9)
     finish_figure(fig)
     fig.savefig(ROOT / "dissertation_backtest_performance.png")

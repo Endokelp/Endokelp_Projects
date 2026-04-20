@@ -19,7 +19,9 @@ Rough order I want to tackle:
 Not financial advice. Just practice.
 
 **Python — portfolio MPT / tech sleeve** (`PythonProjects/portfolio_mpt/`)  
-Mean–variance frontier, Monte Carlo scatter of random weights, and a longer multi-asset backtest with heatmaps and drawdown plots. Data mostly comes from Yahoo via `yfinance`; figures use a small custom matplotlib style so they’re not the default blue/orange template look. Not investment advice—just math I wanted to see on real-ish inputs.
+Mean–variance frontier, Monte Carlo scatter of random weights, and a longer multi-asset backtest with heatmaps and drawdown plots. Prices from Yahoo via `yfinance`; plot defaults tweaked in `src/plot_style.py`. Not investment advice.
+
+There’s a `scripts/vibe_detective.py` gremlin hunt plus `scripts/DETECTIVE_TASK.txt` for a manual Task pass before push; optional hook: `git config core.hooksPath .githooks`.
 
 ## What’s here
 

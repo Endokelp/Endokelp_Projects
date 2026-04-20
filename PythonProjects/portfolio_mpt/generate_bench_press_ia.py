@@ -132,7 +132,7 @@ def generate_bench_press_ia():
     # --- 3. Methodology ---
     add_heading(doc, '3. Methodology and Data Collection', 1)
     meth_text = (
-        "This investigation utilized a sample of 30 male participants (ages 18-25) with at least one year of consistent weightlifting experience. "
+        "This investigation used a sample of 30 male participants (ages 18-25) with at least one year of consistent weightlifting experience. "
         "This experience level was chosen to ensure that 'newbie gains' or learning effects—where performance improves simply because the participant "
         "is getting better at the movement—would be minimized. \n\n"
         "The experimental design involved two sessions separated by 48 hours to ensure full muscular recovery. To prevent an 'order effect' "
@@ -258,7 +258,7 @@ def generate_bench_press_ia():
         "A major limitation of this study is 'Participant Habituation.' Many modern lifters have never trained in silence. This lack of "
         "familiarity might have induced a 'frustration effect' or lowered morale in the silence condition, creating an artificial performance "
         "gap. A better design might include a 'Control' group that listens to neutral white noise.\n\n"
-        "Additionally, the 'Specific Genre' effect was not explored. It is possible that participants who chose aggressive genres (like Metal) "
+        "The 'Specific Genre' effect was not explored. It is possible that participants who chose aggressive genres (like Metal) "
         "had a higher surge in adrenaline compared to those who chose upbeat Pop, despite similar BPM. This variation introduces "
         "uncontrolled noise into the dataset."
     )
