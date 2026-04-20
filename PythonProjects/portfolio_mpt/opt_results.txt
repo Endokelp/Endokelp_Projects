@@ -1,0 +1,14 @@
+--- Strategy Comparison Analysis ---
+
+1. Minimum Variance Portfolio (MVP):
+   Return: 0.1853, Risk: 0.2418
+   Weights: {'AAPL': np.float64(0.4018), 'GOOGL': np.float64(0.1305), 'MSFT': np.float64(0.4677), 'NVDA': np.float64(0.0), 'PLTR': np.float64(0.0)}
+
+2. Maximum Sharpe Ratio (Tangency):
+   Return: 0.4761, Risk: 0.4346
+   Sharpe: 1.0494
+   Weights: {'AAPL': np.float64(0.0), 'GOOGL': np.float64(0.1805), 'MSFT': np.float64(0.0), 'NVDA': np.float64(0.6615), 'PLTR': np.float64(0.158)}
+
+3. Equal Weighted (EW):
+   Return: 0.3231, Risk: 0.3182
+   Weights: {'AAPL': np.float64(0.2), 'GOOGL': np.float64(0.2), 'MSFT': np.float64(0.2), 'NVDA': np.float64(0.2), 'PLTR': np.float64(0.2)}
