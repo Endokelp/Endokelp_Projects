@@ -1,0 +1,35 @@
+Asset Allocation: The process of dividing an investment portfolio among different asset categories, such as stocks, bonds, and cash.
+
+Alpha: The excess return of an investment relative to the return of a benchmark index.
+
+Beta: A measure of the volatility, or systematic risk, of a security or a portfolio in comparison to the market as a whole.
+
+Black-Litterman Model: An analytical tool used by portfolio managers to optimize asset allocation within a dynamic risk-controlled framework.
+
+Capital Asset Pricing Model (CAPM): A model that describes the relationship between systematic risk and expected return for assets, particularly stocks.
+
+Condition Number: A measure of how sensitive a function is to changes or errors in the input, particularly used to evaluate the stability of matrix inversion.
+
+Covariance Matrix: A square matrix giving the covariance between each pair of elements of a given random vector.
+
+Drawdown: A peak-to-trough decline during a specific period for an investment, trading account, or fund.
+
+Efficient Frontier: The set of optimal portfolios that offer the highest expected return for a defined level of risk or the lowest risk for a given level of expected return.
+
+Hessian Matrix: A square matrix of second-order partial derivatives of a scalar-valued function, used in quadratic optimization.
+
+Hierarchical Risk Parity (HRP): A portfolio optimization technique that uses hierarchical clustering to allocate risk across a portfolio without matrix inversion.
+
+Kurtosis: A statistical measure that defines how heavily the tails of a distribution differ from the tails of a normal distribution.
+
+Lagrangian Multipliers: A strategy for finding the local maxima and minima of a function subject to equality constraints.
+
+Mean-Variance Optimization (MVO): The process of selecting weights for a portfolio so that the variance is minimized for a given level of expected return.
+
+Principal Component Analysis (PCA): A statistical procedure that uses an orthogonal transformation to convert a set of observations of possibly correlated variables into a set of values of linearly uncorrelated variables called principal components.
+
+Sharpe Ratio: A measure that indicates the average return earned in excess of the risk-free rate per unit of volatility or total risk.
+
+Standard Deviation: A quantity expressing by how much the members of a group differ from the mean value for the group.
+
+Volatility: A statistical measure of the dispersion of returns for a given security or market index.

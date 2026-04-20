@@ -18,6 +18,9 @@ What I’m planning to build there, in order:
 
 Nothing here is production trading advice. It’s practice.
 
+**Python — portfolio MPT / tech sleeve** (`PythonProjects/portfolio_mpt/`)  
+Mean–variance frontier, Monte Carlo scatter of random weights, and a longer multi-asset backtest with heatmaps and drawdown plots. Data mostly comes from Yahoo via `yfinance`; figures use a small custom matplotlib style so they’re not the default blue/orange template look. Not investment advice—just math I wanted to see on real-ish inputs.
+
 ## What’s here right now
 
 **Java — Ultimate even/odd** (`UltimateEven_Odd.java`)  
