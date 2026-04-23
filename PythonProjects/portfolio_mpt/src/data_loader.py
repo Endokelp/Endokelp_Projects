@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 import yfinance as yf
 
-from src.paths import IA_DATA
+from src.paths import PORTFOLIO_DATA
 
 # Define stocks and timeframe
 STOCKS = ['AAPL', 'MSFT', 'GOOGL', 'NVDA', 'PLTR']
@@ -48,19 +48,22 @@ def main():
         'Annualized Mean Return': mu,
         'Annualized Volatility (Risk)': vol
     })
+    stats = stats.reset_index().rename(columns={stats.columns[0]: "Ticker"})
     
     # 4. Covariance Matrix (Annualized)
     cov_matrix = returns.cov() * 252
+    cov_for_export = cov_matrix.reset_index()
+    cov_for_export = cov_for_export.rename(columns={cov_for_export.columns[0]: "Ticker"})
     
     # 5. Output to Excel
-    output_path = str(IA_DATA)
-    os.makedirs(IA_DATA.parent, exist_ok=True)
+    output_path = str(PORTFOLIO_DATA)
+    os.makedirs(PORTFOLIO_DATA.parent, exist_ok=True)
     
     with pd.ExcelWriter(output_path, engine='openpyxl') as writer:
         data.to_excel(writer, sheet_name='Raw Prices')
         returns.to_excel(writer, sheet_name='Daily Returns')
-        stats.to_excel(writer, sheet_name='Summary Stats')
-        cov_matrix.to_excel(writer, sheet_name='Covariance Matrix')
+        stats.to_excel(writer, sheet_name='Summary Stats', index=False)
+        cov_for_export.to_excel(writer, sheet_name='Covariance Matrix', index=False)
         
         # Auto-adjust column widths for all sheets
         for sheet_name in writer.sheets:

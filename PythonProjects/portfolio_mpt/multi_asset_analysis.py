@@ -11,7 +11,7 @@ import seaborn as sns
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from src.paths import DISSERTATION_DATA, ROOT
+from src.paths import MULTI_ASSET_DATA, ROOT
 from src.plot_style import (
     PAPER,
     apply_plot_style,
@@ -113,7 +113,7 @@ def generate_visual_analytics(prices, returns, backtest_results):
     ax.set_title("Pairwise correlations")
     subtitle(ax, "Daily log returns, full sample")
     finish_figure(fig)
-    fig.savefig(ROOT / "dissertation_heatmap.png")
+    fig.savefig(ROOT / "multi_asset_heatmap.png")
     plt.close()
 
     # 2. HRP Cluster Dendrogram
@@ -127,7 +127,7 @@ def generate_visual_analytics(prices, returns, backtest_results):
     subtitle(ax, "Distance = √(0.5(1 − ρ))")
     plt.setp(ax.get_xticklabels(), rotation=35, ha="right", fontsize=9)
     finish_figure(fig)
-    fig.savefig(ROOT / "dissertation_dendrogram.png")
+    fig.savefig(ROOT / "multi_asset_dendrogram.png")
     plt.close()
 
     # 3. Rolling Correlation
@@ -147,7 +147,7 @@ def generate_visual_analytics(prices, returns, backtest_results):
     subtitle(ax, "252 trading days")
     ax.legend(loc="lower left", fontsize=9)
     finish_figure(fig)
-    fig.savefig(ROOT / "dissertation_rolling_corr.png")
+    fig.savefig(ROOT / "multi_asset_rolling_corr.png")
     plt.close()
 
     # 4. Drawdown Profile
@@ -168,12 +168,12 @@ def generate_visual_analytics(prices, returns, backtest_results):
     subtitle(ax, "Min-var / HRP / equal weight; rules in script")
     ax.legend(loc="lower left", fontsize=9)
     finish_figure(fig)
-    fig.savefig(ROOT / "dissertation_drawdowns.png")
+    fig.savefig(ROOT / "multi_asset_drawdowns.png")
     plt.close()
 
 
 def main():
-    file_path = DISSERTATION_DATA
+    file_path = MULTI_ASSET_DATA
     prices = pd.read_excel(file_path, sheet_name="Price Data", index_col="Date")
     returns = np.log(prices / prices.shift(1)).dropna()
 
@@ -198,7 +198,7 @@ def main():
     subtitle(ax, "~monthly rebalance, 1y rolling window; no costs")
     ax.legend(loc="upper left", fontsize=9)
     finish_figure(fig)
-    fig.savefig(ROOT / "dissertation_backtest_performance.png")
+    fig.savefig(ROOT / "multi_asset_backtest_equity.png")
     plt.close()
 
     metrics = {}
@@ -221,7 +221,7 @@ def main():
         }
 
     metrics_df = pd.DataFrame(metrics).transpose()
-    metrics_path = ROOT / "dissertation_backtest_metrics.csv"
+    metrics_path = ROOT / "multi_asset_backtest_metrics.csv"
     metrics_df.to_csv(metrics_path)
     print("\n--- Backtest Performance Metrics ---")
     print(metrics_df)
