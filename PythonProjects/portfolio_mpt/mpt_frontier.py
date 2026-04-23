@@ -9,7 +9,7 @@ from matplotlib import pyplot as plt
 # allow running from repo root
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from src.paths import IA_DATA
+from src.paths import PORTFOLIO_DATA
 from src.plot_style import (
     apply_plot_style,
     subtitle,
@@ -25,8 +25,8 @@ from src.plot_style import (
 )
 
 # Load data from Excel
-stats_df = pd.read_excel(IA_DATA, sheet_name="Summary Stats")
-cov_df = pd.read_excel(IA_DATA, sheet_name="Covariance Matrix")
+stats_df = pd.read_excel(PORTFOLIO_DATA, sheet_name="Summary Stats")
+cov_df = pd.read_excel(PORTFOLIO_DATA, sheet_name="Covariance Matrix")
 
 # Clean data
 tickers = stats_df["Ticker"].values

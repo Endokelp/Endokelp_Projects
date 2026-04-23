@@ -7,12 +7,12 @@ from matplotlib import pyplot as plt
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from src.paths import IA_DATA
+from src.paths import PORTFOLIO_DATA
 from src.plot_style import apply_plot_style, subtitle, finish_figure, MONTE_CMAP, MUTED
 
 # Load data
-stats_df = pd.read_excel(IA_DATA, sheet_name="Summary Stats")
-cov_df = pd.read_excel(IA_DATA, sheet_name="Covariance Matrix")
+stats_df = pd.read_excel(PORTFOLIO_DATA, sheet_name="Summary Stats")
+cov_df = pd.read_excel(PORTFOLIO_DATA, sheet_name="Covariance Matrix")
 
 tickers = stats_df["Ticker"].values
 mu = stats_df["Annualized Mean Return"].values
