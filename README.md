@@ -10,6 +10,10 @@ Public repo where I stash smaller projects: coursework, experiments, and random 
 
 This is a mean variance portfolio playground. It pulls stock prices from Yahoo, builds expected returns and a covariance matrix, then runs the usual optimization stuff: efficient frontier, tangency portfolio, equal weight and MVP comparisons, and a Monte Carlo pass that draws random long only weights so you can see how scattered outcomes are. There is also a longer multi asset backtest path with correlation heatmaps, drawdowns, and equity style plots if you feed it the bigger workbook. Plots use a shared matplotlib style so they are not the default neon homework look. Not trading advice. More detail and run commands are in that folder’s README.
 
+**volatility-targeting** (`PythonProjects/volatility-targeting/`)
+
+Small research package that scales a daily return series so realized vol tracks a target. Rolling std and EWMA vol estimators, capped/floored leverage, and a one-bar lag on the scaler so nothing peeks at the return it's sizing. Ships a CLI for CSVs or synthetic data, pytest coverage, and ruff config. Details and run commands in that folder’s README.
+
 ---
 
 ## Robotics projects
