@@ -8,7 +8,7 @@ Public repo where I stash smaller projects: coursework, experiments, and random 
 
 **MPT** (`PythonProjects/portfolio_mpt/`)
 
-This is a mean variance portfolio playground. It pulls stock prices from Yahoo, builds expected returns and a covariance matrix, then runs the usual optimization stuff: efficient frontier, tangency portfolio, equal weight and MVP comparisons, and a Monte Carlo pass that draws random long only weights so you can see how scattered outcomes are. There is also a longer multi asset backtest path with correlation heatmaps, drawdowns, and equity style plots if you feed it the bigger workbook, plus a small unrelated stats script for a strength vs endurance scatter. Plots use a shared matplotlib style so they are not the default neon homework look. Not trading advice. More detail and run commands are in that folder’s README.
+This is a mean variance portfolio playground. It pulls stock prices from Yahoo, builds expected returns and a covariance matrix, then runs the usual optimization stuff: efficient frontier, tangency portfolio, equal weight and MVP comparisons, and a Monte Carlo pass that draws random long only weights so you can see how scattered outcomes are. There is also a longer multi asset backtest path with correlation heatmaps, drawdowns, and equity style plots if you feed it the bigger workbook. Plots use a shared matplotlib style so they are not the default neon homework look. Not trading advice. More detail and run commands are in that folder’s README.
 
 ---
 
