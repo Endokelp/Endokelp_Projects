@@ -1,6 +1,8 @@
 # Endokelp_Projects
 
-Public repo where I stash smaller projects: coursework, experiments, and random builds. If something looks rough, it probably is.
+Public experiments, quant finance scripts, robotics demos, and the portfolio template behind **[endokelp.com](https://endokelp.com)**.
+
+Main portfolio site code lives in [Endokelp/Endoweb](https://github.com/Endokelp/Endoweb). This repo is the grab bag: MPT optimizer, volatility targeting, Java robotics sims, Snake, and coursework.
 
 ---
 
