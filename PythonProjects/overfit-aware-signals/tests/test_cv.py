@@ -63,6 +63,16 @@ def test_purged_kfold_applies_lookback_on_each_fold():
         assert leaked == [], f"leaked train indices {leaked} for test starting {te_start}"
 
 
+def test_noncontiguous_test_keeps_middle_train():
+    # CPCV can pick non-adjacent groups; min/max span must not nuke the gap
+    n = 12
+    test = np.array([1, 2, 9, 10])
+    kept = purge_train_indices(n, test, lookback=0, label_horizon=0, embargo_pct=0.0)
+    assert 5 in kept
+    assert 1 not in kept
+    assert 9 not in kept
+
+
 def test_invalid_n_splits_raises():
     with pytest.raises(ValueError, match="n_splits"):
         PurgedKFold(n_splits=1, lookback=0)

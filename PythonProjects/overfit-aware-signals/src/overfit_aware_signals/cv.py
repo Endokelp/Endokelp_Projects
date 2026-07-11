@@ -3,6 +3,14 @@ from collections.abc import Iterator
 import numpy as np
 
 
+def _contiguous_segments(indices: np.ndarray) -> list[np.ndarray]:
+    if indices.size == 0:
+        return []
+    idx = np.sort(np.unique(indices.astype(int)))
+    breaks = np.where(np.diff(idx) > 1)[0] + 1
+    return list(np.split(idx, breaks))
+
+
 def purge_train_indices(
     n_samples: int,
     test_indices: np.ndarray,
@@ -25,24 +33,30 @@ def purge_train_indices(
         return np.arange(n_samples)
 
     test_set = set(test.tolist())
-    # info interval for obs i: [i - lookback, i + label_horizon]
-    test_t0 = int(test.min()) - lookback
-    test_t1 = int(test.max()) + label_horizon
-
+    segments = _contiguous_segments(test)
     embargo = int(n_samples * embargo_pct)
-    embargo_end = int(test.max()) + 1 + embargo
 
     keep: list[int] = []
     for i in range(n_samples):
         if i in test_set:
             continue
-        if int(test.max()) + 1 <= i < embargo_end:
-            continue
-        t0 = i - lookback
-        t1 = i + label_horizon
-        if t0 <= test_t1 and test_t0 <= t1:
-            continue
-        keep.append(i)
+        drop = False
+        for seg in segments:
+            seg_max = int(seg.max())
+            # embargo after each contiguous test block (CPCV has gaps between groups)
+            if seg_max + 1 <= i < seg_max + 1 + embargo:
+                drop = True
+                break
+            # info interval for obs i: [i - lookback, i + label_horizon]
+            t0 = i - lookback
+            t1 = i + label_horizon
+            test_t0 = int(seg.min()) - lookback
+            test_t1 = int(seg.max()) + label_horizon
+            if t0 <= test_t1 and test_t0 <= t1:
+                drop = True
+                break
+        if not drop:
+            keep.append(i)
     return np.asarray(keep, dtype=int)
 
 

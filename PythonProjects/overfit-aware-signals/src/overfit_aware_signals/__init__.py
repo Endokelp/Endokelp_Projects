@@ -1,6 +1,7 @@
 from .analytics import PerformanceMetrics, compute_metrics
 from .backtest import BacktestResult, run_backtest
 from .config import BacktestConfig, CVConfig, SignalConfig, UniverseConfig
+from .cpcv import CombinatorialPurgedCV, oos_sharpe_distribution
 from .cv import PurgedKFold, purge_train_indices
 from .data import fetch_prices, make_synthetic_prices
 from .portfolio import form_weights_long_only, form_weights_long_short
@@ -25,4 +26,6 @@ __all__ = [
     "compute_metrics",
     "PurgedKFold",
     "purge_train_indices",
+    "CombinatorialPurgedCV",
+    "oos_sharpe_distribution",
 ]
