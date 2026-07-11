@@ -15,13 +15,12 @@ Demo: `python -m overfit_aware_signals synth` (preferred)  |  Live non-claim: `p
 - P10: showcase blockers closed — CSCV Sharpe-rank; `median_block_sharpe` / `block_sharpe_*` / `path_sharpe_distribution`; `RESEARCH_TRIAL_LOG` (9) + `--sensitivity` / `trials` CLI; survivorship NON-CLAIM + synth preferred; arXiv cites verified. `pytest` 84/84, ruff clean.
 - P10b: Sonnet re-audit **100% GO for showcase** (2026-07-11). Deprecated `oos_sharpe_distribution` alias removed.
 
-## Current phase: P11 — optional showcase polish / commit
+## Current phase: P11 — optional polish / push
 Goals:
-- Commit P9+P10 work if user wants (still uncommitted at digest write)
-- Optional: regenerate onepager PDF; LinkedIn surface; portfolio page
+- Optional: regenerate onepager PDF; LinkedIn surface; portfolio page; push
 Done-when:
-- [ ] User commits or requests PR
 - [ ] Optional polish only if requested
+- [ ] Push when user asks (`main` ahead of origin by 9)
 
 ## Decisions
 - No scipy. 3 signals (pairs cut). Pass `n_trials=` for discarded configs; log has 9.
