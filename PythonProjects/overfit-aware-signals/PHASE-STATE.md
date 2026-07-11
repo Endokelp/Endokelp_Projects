@@ -12,23 +12,23 @@ Demo: `python -m overfit_aware_signals synth`  |  Live: `python -m overfit_aware
 - P5: PSR/DSR via `NormalDist`; hand-worked (SR=1,T=60,γ3=0,γ4=3) green. `pytest` 60/60, ruff clean.
 - P6: PBO via CSCV; toy PBO=0 / PBO=1 green. `pytest` 67/67, ruff clean.
 - P7: `research.py` + `plotting.py` + `cli.py`/`__main__.py`; `synth` prints verdict table. `pytest` 74/74, ruff clean.
+- P8: live 50-ticker run + README Results (all 3 PASS: DSR≥0.995, PBO=0.031); differentiator + survivorship caveat. `pytest` 74/74, ruff clean.
 
-## Current phase: 8 — real universe run + README
-Goals:
-- `python -m overfit_aware_signals run` on ~50-ticker universe; capture DSR/PBO/verdict numbers
-- README: Results table, honest per-signal verdict, "why this isn't just another AFML clone", survivorship caveat
-Done-when: README quotes real (non-NaN) numbers; `pytest` + `ruff` still green.
+## Current phase: complete — no further phases
+Goals: n/a (quant package closed)
+Done-when: n/a
 
 ## Decisions
 - No scipy — stdlib/pandas cover DSR moments and CPCV/CSCV combos.
 - 3 signals only (pairs/stat-arb cut).
 - CPCV: S=8, k=2 → C(8,2)=28. Code style: no docstrings, short vars, type hints on public API only.
 - Real universe ~50 tickers, current constituents — not PIT survivorship-free; state in README.
-- Differentiator: honest per-signal verdict + cite 2026 DSR/PBO-on-LLM-strategies work.
+- Differentiator: honest per-signal verdict + cite 2026 DSR/PBO-on-LLM-strategies work (SysTradeBench arXiv:2604.04812; Alpha Illusion arXiv:2605.16895).
 - P5: `kurt` is γ4 (non-excess; normal=3); callers use `rets.kurt() + 3`.
 - P6: CSCV ranks by mean return; PBO = mean(λ≤0); reject if PBO > 0.05.
 - P7: DSR uses non-annualized SR; n_trials = # signals; PBO is set-level (same across rows); PASS iff DSR≥0.95 and PBO≤0.05.
 - P7: CLI avoids non-ASCII for Windows cp1252 consoles.
+- P8: live panel 2005-01→2026-07, 259 months × 50 tickers; all three signals PASS.
 
 ## Gotchas
 - yfinance may lack "Adj Close" — fall back to "Close".
@@ -38,9 +38,12 @@ Done-when: README quotes real (non-NaN) numbers; `pytest` + `ruff` still green.
 - PSR/DSR: pandas `.kurt()` is excess → add 3.
 - CSCV: `n_groups` even; returns (T, N) with N≥2.
 - Windows consoles: no Unicode arrows in CLI prints.
+- Survivorship: current-constituent universe inflates absolute Sharpes; DSR/PBO still valid within-panel.
 
 ## Key files
 - `src/overfit_aware_signals/{data,signals,portfolio,backtest,analytics,cv,cpcv,stats,pbo}.py`
 - `src/overfit_aware_signals/research.py` — evaluate_signals + verdict table
 - `src/overfit_aware_signals/{plotting,cli,__main__}.py`
+- `README.md` — Results table + differentiator + survivorship caveat
+- `results/` — OOS Sharpe hists + IS/OOS rank scatter from live run
 - Full design: `C:\Users\venni\.claude\plans\sorted-gathering-willow.md`
