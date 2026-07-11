@@ -31,7 +31,12 @@ def fetch_prices(
     # ponytail: cache keyed on resolved end-date, so an open-ended (end=None) fetch
     # grows one file per calendar day it's run. Fine for research use; prune
     # data_cache/ by hand, or key on ticker-set only, if this matters later.
-    return px.resample("ME").last()
+    last_raw = px.index.max()
+    monthly = px.resample("ME").last()
+    # drop incomplete trailing month when earlier complete months exist
+    if len(monthly) > 1 and last_raw < monthly.index[-1]:
+        monthly = monthly.iloc[:-1]
+    return monthly
 
 
 def make_synthetic_prices(

@@ -40,11 +40,19 @@ def run_backtest(
         else:
             weights_new = form_weights_long_short(sig, cfg.n_longs, cfg.n_shorts)
 
-        turnover = float((weights_new - weights_prev).abs().sum() / 2)
-        cost = turnover * cfg.cost_bps / 10_000
+        # one-way cost on each traded leg: Σ|Δw| * bps (not half-L1 round-trip)
+        traded = float((weights_new - weights_prev).abs().sum())
+        cost = traded * cfg.cost_bps / 10_000
+        turnover = traded / 2.0
 
         rets = monthly_returns.iloc[i + 1]
-        port_ret = float((weights_new * rets).sum()) - cost
+        # skip names with missing next-period returns; renormalize remaining weight
+        valid = rets.notna()
+        w = weights_new.where(valid, 0.0)
+        gross = float(w.abs().sum())
+        if gross > 0.0 and gross != 1.0:
+            w = w / gross
+        port_ret = float((w * rets.fillna(0.0)).sum()) - cost
 
         portfolio_rets.append((next_date, port_ret))
         weight_records.append((rebal_date, weights_new.copy()))

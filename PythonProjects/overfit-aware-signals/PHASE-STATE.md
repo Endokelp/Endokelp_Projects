@@ -1,49 +1,43 @@
 # overfit-aware-signals — State
-Vision: Quant research package proving 3 real cross-sectional equity signals (12-1 momentum, 1mo reversal, low-vol) against overfitting, using purged CV, CPCV, deflated Sharpe ratio, and probability of backtest overfitting (PBO) — all from primary sources (Bailey & Lopez de Prado 2014; Bailey/Borwein/Lopez de Prado/Zhu). Honest per-signal pass/fail verdict is the point, not a vanity Sharpe number.
-Stack: Python 3.11+, numpy/pandas/yfinance/matplotlib. No scipy — `statistics.NormalDist` (stdlib 3.8+) covers norm cdf/inv_cdf for DSR; pandas `.skew()`/`.kurt()` cover moments; `itertools.combinations` covers CPCV/CSCV path generation.
+Vision: Quant research package proving 3 real cross-sectional equity signals (12-1 momentum, 1mo reversal, low-vol) against overfitting via CPCV/DSR/PBO from primary sources. Honest per-signal pass/fail is the point. **Showcase gate: 100% GO from re-audit.**
+Stack: Python 3.11+, numpy/pandas/yfinance/matplotlib. No scipy.
 Run: `pip install -e ".[dev]"` && `pytest -v` && `ruff check src/ tests/`
-Demo: `python -m overfit_aware_signals synth`  |  Live: `python -m overfit_aware_signals run`
+Demo: `python -m overfit_aware_signals synth` (preferred)  |  Live non-claim: `python -m overfit_aware_signals run`
+
+## Agent routing (user mandate — every session)
+- Reviews / audits / QA: **Sonnet subagents only — not Opus**
+- Implementation / coding: prefer **Grok + Composer** wherever possible
+- Catchup must restate this; do not regress to Opus for audits
 
 ## Done
-- P1: scaffold + inputs — config/data/signals/portfolio. `pytest` 27/27, ruff clean.
-- P2: backtest engine + analytics — signal-agnostic `run_backtest`, `compute_metrics`. `pytest` 43/43, ruff clean.
-- P3: purged CV + embargo — `purge_train_indices` + `PurgedKFold`; lookback-aware info interval. `pytest` 48/48, ruff clean.
-- P4: combinatorial purged CV — `CombinatorialPurgedCV` C(S,k) paths + `oos_sharpe_distribution`. `pytest` 53/53, ruff clean.
-- P5: PSR/DSR via `NormalDist`; hand-worked (SR=1,T=60,γ3=0,γ4=3) green. `pytest` 60/60, ruff clean.
-- P6: PBO via CSCV; toy PBO=0 / PBO=1 green. `pytest` 67/67, ruff clean.
-- P7: `research.py` + `plotting.py` + `cli.py`/`__main__.py`; `synth` prints verdict table. `pytest` 74/74, ruff clean.
-- P8: live 50-ticker run + README Results (all 3 PASS: DSR≥0.995, PBO=0.031); differentiator + survivorship caveat. `pytest` 74/74, ruff clean.
+- P1–P8: scaffold → live run (pre-audit Results later invalidated)
+- P9: formula remediation — PBO `rank/(N+1)` + `λ<0`; CPCV `φ=C(N-1,k-1)` + block Sharpes; DSR cross-trial `V[{SR̂}]`; drop incomplete month; one-way Σ|Δw| costs; reversal = latest month.
+- P10: showcase blockers closed — CSCV Sharpe-rank; `median_block_sharpe` / `block_sharpe_*` / `path_sharpe_distribution`; `RESEARCH_TRIAL_LOG` (9) + `--sensitivity` / `trials` CLI; survivorship NON-CLAIM + synth preferred; arXiv cites verified. `pytest` 84/84, ruff clean.
+- P10b: Sonnet re-audit **100% GO for showcase** (2026-07-11). Deprecated `oos_sharpe_distribution` alias removed.
 
-## Current phase: complete — no further phases
-Goals: n/a (quant package closed)
-Done-when: n/a
+## Current phase: P11 — optional showcase polish / commit
+Goals:
+- Commit P9+P10 work if user wants (still uncommitted at digest write)
+- Optional: regenerate onepager PDF; LinkedIn surface; portfolio page
+Done-when:
+- [ ] User commits or requests PR
+- [ ] Optional polish only if requested
 
 ## Decisions
-- No scipy — stdlib/pandas cover DSR moments and CPCV/CSCV combos.
-- 3 signals only (pairs/stat-arb cut).
-- CPCV: S=8, k=2 → C(8,2)=28. Code style: no docstrings, short vars, type hints on public API only.
-- Real universe ~50 tickers, current constituents — not PIT survivorship-free; state in README.
-- Differentiator: honest per-signal verdict + cite 2026 DSR/PBO-on-LLM-strategies work (SysTradeBench arXiv:2604.04812; Alpha Illusion arXiv:2605.16895).
-- P5: `kurt` is γ4 (non-excess; normal=3); callers use `rets.kurt() + 3`.
-- P6: CSCV ranks by mean return; PBO = mean(λ≤0); reject if PBO > 0.05.
-- P7: DSR uses non-annualized SR; n_trials = # signals; PBO is set-level (same across rows); PASS iff DSR≥0.95 and PBO≤0.05.
-- P7: CLI avoids non-ASCII for Windows cp1252 consoles.
-- P8: live panel 2005-01→2026-07, 259 months × 50 tickers; all three signals PASS.
+- No scipy. 3 signals (pairs cut). Pass `n_trials=` for discarded configs; log has 9.
+- CPCV: S=8, k=2 → 28 combos, φ=7 paths; table median = combinatorial **block** Sharpes.
+- PASS iff DSR≥0.95 and set PBO≤0.05.
+- CSCV ranks by **Sharpe** (mean fallback only when subsample vol=0).
+- Live Results = **non-claim** (survivorship); `synth` is the honest demo path.
+- Showcase bar cleared: Sonnet **100% GO**.
 
 ## Gotchas
-- yfinance may lack "Adj Close" — fall back to "Close".
-- Purge on LOOKBACK window overlap, not just labels.
-- Embargo after *each* contiguous test block (CPCV gaps).
-- Contiguous min/max purge over-deletes under CPCV — purge must segment.
-- PSR/DSR: pandas `.kurt()` is excess → add 3.
-- CSCV: `n_groups` even; returns (T, N) with N≥2.
-- Windows consoles: no Unicode arrows in CLI prints.
-- Survivorship: current-constituent universe inflates absolute Sharpes; DSR/PBO still valid within-panel.
+- Current-constituent universe = survivorship; DSR/PBO do not fix look-ahead constituency
+- Undercounted `n_trials` inflates DSR (esp. lowvol ~n=50)
+- Fixed-rule CPCV paths collapse — don’t sell path dispersion
+- yfinance may lack Adj Close → Close fallback
+- Large uncommitted tree (P9–P10 + showcase/) until user asks to commit
 
 ## Key files
-- `src/overfit_aware_signals/{data,signals,portfolio,backtest,analytics,cv,cpcv,stats,pbo}.py`
-- `src/overfit_aware_signals/research.py` — evaluate_signals + verdict table
-- `src/overfit_aware_signals/{plotting,cli,__main__}.py`
-- `README.md` — Results table + differentiator + survivorship caveat
-- `results/` — OOS Sharpe hists + IS/OOS rank scatter from live run
-- Full design: `C:\Users\venni\.claude\plans\sorted-gathering-willow.md`
+- `src/overfit_aware_signals/{data,signals,portfolio,backtest,analytics,cv,cpcv,stats,pbo,research,plotting,cli}.py`
+- `README.md`, `results/`, `showcase/`, this `PHASE-STATE.md`

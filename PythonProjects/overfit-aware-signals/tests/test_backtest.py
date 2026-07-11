@@ -49,7 +49,19 @@ def test_first_rebalance_turnover_equals_half_long_weight(toy_prices_3x6):
     signals = compute_momentum(toy_prices_3x6, sig_cfg)
     bt_cfg = BacktestConfig(portfolio_mode="long_only", n_longs=1, cost_bps=0.0)
     result = run_backtest(toy_prices_3x6, signals, bt_cfg)
+    # turnover still reported as half-L1; one-way cost uses full Σ|Δw|
     assert result.turnovers.iloc[0] == pytest.approx(0.5, rel=1e-9)
+
+
+def test_one_way_cost_charges_each_traded_leg(toy_prices_3x6):
+    sig_cfg = SignalConfig(lookback_months=2, skip_recent_month=True)
+    signals = compute_momentum(toy_prices_3x6, sig_cfg)
+    base = BacktestConfig(portfolio_mode="long_only", n_longs=1, cost_bps=0.0)
+    costly = BacktestConfig(portfolio_mode="long_only", n_longs=1, cost_bps=100.0)
+    r0 = run_backtest(toy_prices_3x6, signals, base).returns.iloc[0]
+    r1 = run_backtest(toy_prices_3x6, signals, costly).returns.iloc[0]
+    # first rebalance: Σ|Δw| = 1.0 from flat → 100bps one-way
+    assert r1 == pytest.approx(r0 - 0.01, rel=1e-12)
 
 
 def test_weights_on_toy_panel(toy_prices_3x6):

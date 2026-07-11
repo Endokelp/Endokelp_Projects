@@ -39,7 +39,7 @@ def test_momentum_invalid_lookback_raises(toy_prices_3x6):
 
 def test_reversal_values_by_hand(toy_prices_3x6):
     cfg = SignalConfig()
-    sig = compute_reversal(toy_prices_3x6, cfg).iloc[2]
+    sig = compute_reversal(toy_prices_3x6, cfg).iloc[1]
     assert sig["A"] == pytest.approx(-(110.0 / 100.0 - 1), rel=1e-9)
     assert sig["B"] == pytest.approx(-(90.0 / 100.0 - 1), rel=1e-9)
     assert sig["C"] == pytest.approx(0.00, abs=1e-12)
@@ -47,7 +47,7 @@ def test_reversal_values_by_hand(toy_prices_3x6):
 
 def test_reversal_losers_score_highest(toy_prices_3x6):
     cfg = SignalConfig()
-    sig = compute_reversal(toy_prices_3x6, cfg).iloc[2]
+    sig = compute_reversal(toy_prices_3x6, cfg).iloc[1]
     # B lost value from index0->1 (recent loser) -> highest reversal score
     assert sig["B"] > sig["C"] > sig["A"]
 
@@ -55,8 +55,8 @@ def test_reversal_losers_score_highest(toy_prices_3x6):
 def test_reversal_nan_before_two_periods(toy_prices_3x6):
     cfg = SignalConfig()
     sig = compute_reversal(toy_prices_3x6, cfg)
-    assert sig.iloc[:2].isna().all(axis=None)
-    assert sig.iloc[2:].notna().all(axis=None)
+    assert sig.iloc[:1].isna().all(axis=None)
+    assert sig.iloc[1:].notna().all(axis=None)
 
 
 def test_lowvol_matches_pandas_composition(toy_prices_3x6):

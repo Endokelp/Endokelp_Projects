@@ -65,3 +65,15 @@ def test_fetch_prices_resamples_to_month_end(tmp_path, monkeypatch):
     px = oas_data.fetch_prices(["A"], "2020-01-01", "2020-01-05", cache_dir=tmp_path)
     assert len(px) == 1
     assert px.index[0] == pd.Timestamp("2020-01-31")
+
+
+def test_fetch_prices_drops_incomplete_trailing_month(tmp_path, monkeypatch):
+    idx = pd.date_range("2020-01-01", periods=45, freq="D")  # into mid-Feb
+    cols = pd.MultiIndex.from_product([["Close"], ["A"]])
+    raw = pd.DataFrame(1.0, index=idx, columns=cols)
+
+    monkeypatch.setattr(oas_data.yf, "download", lambda *a, **k: raw)
+    px = oas_data.fetch_prices(
+        ["A"], "2020-01-01", "2020-02-15", cache_dir=tmp_path
+    )
+    assert list(px.index) == [pd.Timestamp("2020-01-31")]

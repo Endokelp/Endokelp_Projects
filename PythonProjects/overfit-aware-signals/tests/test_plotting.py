@@ -4,11 +4,11 @@ matplotlib.use("Agg")
 
 import numpy as np
 
-from overfit_aware_signals.plotting import plot_is_oos_rank_scatter, plot_oos_sharpe_hist
+from overfit_aware_signals.plotting import plot_block_sharpe_hist, plot_is_oos_rank_scatter
 
 
-def test_plot_oos_sharpe_hist(tmp_path):
-    fig = plot_oos_sharpe_hist(
+def test_plot_block_sharpe_hist(tmp_path):
+    fig = plot_block_sharpe_hist(
         np.array([0.1, 0.5, -0.2, 0.3, 0.0]), path=tmp_path / "h.png"
     )
     assert fig is not None

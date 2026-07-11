@@ -13,11 +13,12 @@ def compute_momentum(prices: pd.DataFrame, cfg: SignalConfig) -> pd.DataFrame:
 
 
 def compute_reversal(prices: pd.DataFrame, cfg: SignalConfig) -> pd.DataFrame:
-    # fixed 1-month reversal; recent losers (negative last-month return) score highest
-    return -(prices.shift(1) / prices.shift(2) - 1)
+    # 1-month reversal at formation close t: −r_t (known at rebalance)
+    return -prices.pct_change()
 
 
 def compute_lowvol(prices: pd.DataFrame, cfg: SignalConfig) -> pd.DataFrame:
+    # trailing vol through formation close t (same info set as reversal)
     rets = prices.pct_change()
     return -rets.rolling(cfg.lowvol_window_months).std()
 

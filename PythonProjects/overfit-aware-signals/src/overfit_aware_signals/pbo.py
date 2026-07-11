@@ -18,19 +18,29 @@ def _block_bounds(n_samples: int, n_groups: int) -> list[tuple[int, int]]:
     return bounds
 
 
-def _mean_perf(rets: np.ndarray, idx: np.ndarray) -> np.ndarray:
-    # (T, N) → mean return per strategy on selected rows
-    return rets[idx].mean(axis=0)
+def _sharpe_perf(rets: np.ndarray, idx: np.ndarray) -> np.ndarray:
+    # (T, N) → period Sharpe per strategy on selected rows.
+    # Annualization cancels for ranking. Zero-vol → fall back to mean
+    # (Sharpe undefined; preserves constant-series ordering).
+    sub = rets[idx]
+    mean = sub.mean(axis=0)
+    if len(idx) < 2:
+        return mean
+    std = sub.std(axis=0, ddof=1)
+    out = mean.copy()
+    ok = std > 0.0
+    out[ok] = mean[ok] / std[ok]
+    return out
 
 
 def _relative_rank(scores: np.ndarray, winner: int) -> float:
-    # Higher score = better. Average mid-rank among ties; ω̄ = rank / N ∈ (0, 1]
+    # Bailey et al.: ω̄ = rank / (N + 1) ∈ (0, 1). Higher score = better.
     v = scores[winner]
     n = len(scores)
     n_worse = int(np.sum(scores < v))
     n_tie = int(np.sum(scores == v))
     rank = n_worse + (n_tie + 1) / 2.0
-    return rank / n
+    return rank / (n + 1)
 
 
 def cscv_logits(returns: np.ndarray, n_groups: int = 16) -> np.ndarray:
@@ -56,8 +66,8 @@ def cscv_logits(returns: np.ndarray, n_groups: int = 16) -> np.ndarray:
         test_idx = np.concatenate(
             [np.arange(a, b) for i, (a, b) in enumerate(bounds) if i in test_set]
         )
-        is_perf = _mean_perf(rets, train_idx)
-        oos_perf = _mean_perf(rets, test_idx)
+        is_perf = _sharpe_perf(rets, train_idx)
+        oos_perf = _sharpe_perf(rets, test_idx)
         winner = int(np.argmax(is_perf))
         w_bar = _relative_rank(oos_perf, winner)
         w_bar = min(max(w_bar, _EPS), 1.0 - _EPS)
@@ -69,7 +79,7 @@ def cscv_rank_pairs(
     returns: np.ndarray,
     n_groups: int = 16,
 ) -> tuple[np.ndarray, np.ndarray]:
-    # Per combo × strategy: relative IS rank vs relative OOS rank (higher = better)
+    # Per combo × strategy: relative IS Sharpe-rank vs OOS Sharpe-rank
     rets = np.asarray(returns, dtype=float)
     if rets.ndim != 2:
         raise ValueError(f"returns must be 2-D (T, N), got shape {rets.shape}")
@@ -93,8 +103,8 @@ def cscv_rank_pairs(
         test_idx = np.concatenate(
             [np.arange(a, b) for i, (a, b) in enumerate(bounds) if i in test_set]
         )
-        is_perf = _mean_perf(rets, train_idx)
-        oos_perf = _mean_perf(rets, test_idx)
+        is_perf = _sharpe_perf(rets, train_idx)
+        oos_perf = _sharpe_perf(rets, test_idx)
         for j in range(n):
             is_ranks.append(_relative_rank(is_perf, j))
             oos_ranks.append(_relative_rank(oos_perf, j))
@@ -105,5 +115,6 @@ def probability_of_backtest_overfitting(
     returns: np.ndarray,
     n_groups: int = 16,
 ) -> float:
+    # Bailey et al.: PBO = P(λ < 0) — IS winner ranks strictly below OOS median
     logits = cscv_logits(returns, n_groups=n_groups)
-    return float(np.mean(logits <= 0.0))
+    return float(np.mean(logits < 0.0))

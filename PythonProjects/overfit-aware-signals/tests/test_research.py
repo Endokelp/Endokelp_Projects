@@ -29,7 +29,7 @@ def test_evaluate_signals_metrics_finite():
         CVConfig(n_groups=4, n_test_groups=1, embargo_pct=0.0),
         pbo_n_groups=4,
     )
-    for col in ("sharpe", "cagr", "dsr", "pbo", "median_oos_sharpe"):
+    for col in ("sharpe", "cagr", "dsr", "pbo", "median_block_sharpe"):
         assert np.isfinite(df[col]).all()
     assert ((df["dsr"] >= 0.0) & (df["dsr"] <= 1.0)).all()
     assert ((df["pbo"] >= 0.0) & (df["pbo"] <= 1.0)).all()
@@ -84,3 +84,43 @@ def test_evaluate_signals_rejects_empty_prices():
             BacktestConfig(),
             CVConfig(),
         )
+
+
+def test_evaluate_signals_uses_cross_trial_var_for_dsr():
+    prices = make_synthetic_prices(n_assets=12, n_years=8, seed=7)
+    df = evaluate_signals(
+        prices,
+        SignalConfig(),
+        BacktestConfig(n_longs=3, cost_bps=0.0),
+        CVConfig(n_groups=4, n_test_groups=1, embargo_pct=0.0),
+        pbo_n_groups=4,
+    )
+    df2 = evaluate_signals(
+        prices,
+        SignalConfig(),
+        BacktestConfig(n_longs=3, cost_bps=0.0),
+        CVConfig(n_groups=4, n_test_groups=1, embargo_pct=0.0),
+        pbo_n_groups=4,
+        n_trials=20,
+    )
+    assert (df2["dsr"] <= df["dsr"] + 1e-12).all()
+
+
+def test_logged_n_trials_covers_research_log():
+    from overfit_aware_signals.research import RESEARCH_TRIAL_LOG, logged_n_trials
+
+    assert logged_n_trials() == len(RESEARCH_TRIAL_LOG)
+    assert logged_n_trials() >= 3
+    statuses = {r["status"] for r in RESEARCH_TRIAL_LOG}
+    assert statuses == {"kept", "discarded"}
+
+
+def test_dsr_sensitivity_declines_with_n_trials():
+    from overfit_aware_signals.research import dsr_sensitivity
+
+    sens = dsr_sensitivity(
+        0.25, 200, skew=0.0, kurt=3.0, var_sr=0.01, n_trials_grid=[3, 50]
+    )
+    assert float(sens.loc[sens["n_trials"] == 50, "dsr"].iloc[0]) <= float(
+        sens.loc[sens["n_trials"] == 3, "dsr"].iloc[0]
+    ) + 1e-12
