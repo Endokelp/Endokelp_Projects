@@ -32,9 +32,9 @@ Done-when: n/a
 - Undercounted n_trials inflates DSR (esp. lowvol ~n=50)
 - Fixed-rule CPCV paths collapse - do not sell path dispersion
 - yfinance may lack Adj Close -> Close fallback
-- Stale showcase PNGs/PDFs from pre-audit all-PASS tables must not be reused
 
 ## Key files
 - `src/overfit_aware_signals/{data,signals,portfolio,backtest,analytics,cv,cpcv,stats,pbo,research,plotting,cli}.py`
 - `README.md`, `results/`, `showcase/onepager.pdf`, `showcase/showcase.png`
 - this `PHASE-STATE.md`
+
