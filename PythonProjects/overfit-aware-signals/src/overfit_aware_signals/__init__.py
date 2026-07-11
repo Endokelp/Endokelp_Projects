@@ -4,6 +4,7 @@ from .config import BacktestConfig, CVConfig, SignalConfig, UniverseConfig
 from .cpcv import CombinatorialPurgedCV, oos_sharpe_distribution
 from .cv import PurgedKFold, purge_train_indices
 from .data import fetch_prices, make_synthetic_prices
+from .pbo import cscv_logits, probability_of_backtest_overfitting
 from .portfolio import form_weights_long_only, form_weights_long_short
 from .signals import SIGNAL_REGISTRY, compute_lowvol, compute_momentum, compute_reversal
 from .stats import (
@@ -36,4 +37,6 @@ __all__ = [
     "probabilistic_sharpe_ratio",
     "expected_max_sharpe",
     "deflated_sharpe_ratio",
+    "cscv_logits",
+    "probability_of_backtest_overfitting",
 ]
