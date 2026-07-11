@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field
+from typing import Literal
 
 
 @dataclass
@@ -6,6 +7,16 @@ class SignalConfig:
     lookback_months: int = 12
     skip_recent_month: bool = True
     lowvol_window_months: int = 12
+
+
+@dataclass
+class BacktestConfig:
+    portfolio_mode: Literal["long_only", "long_short"] = "long_only"
+    n_longs: int = 5
+    n_shorts: int = 5
+    cost_bps: float = 10.0
+    rf_annual: float = 0.0
+    trading_periods_per_year: int = 12
 
 
 @dataclass
