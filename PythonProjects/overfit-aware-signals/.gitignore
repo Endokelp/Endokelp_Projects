@@ -7,3 +7,5 @@ build/
 .ruff_cache/
 .price_cache/
 data_cache/
+# leftover rename if Windows locks the old path while a viewer has it open
+overfit-aware-signals-onepager.pdf

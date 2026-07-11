@@ -36,5 +36,5 @@ Done-when: n/a
 
 ## Key files
 - `src/overfit_aware_signals/{data,signals,portfolio,backtest,analytics,cv,cpcv,stats,pbo,research,plotting,cli}.py`
-- `README.md`, `results/`, `showcase/` (onepager PDF, LinkedIn PNG + post copy)
+- `README.md`, `results/`, `showcase/onepager.pdf`, `showcase/showcase.png`
 - this `PHASE-STATE.md`
