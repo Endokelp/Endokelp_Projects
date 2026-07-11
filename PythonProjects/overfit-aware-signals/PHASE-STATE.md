@@ -8,12 +8,13 @@ Run: `pip install -e ".[dev]"` && `pytest -v` && `ruff check src/ tests/`
 - P2: backtest engine + analytics — signal-agnostic `run_backtest`, `compute_metrics`. `pytest` 43/43, ruff clean.
 - P3: purged CV + embargo — `purge_train_indices` + `PurgedKFold`; lookback-aware info interval. `pytest` 48/48, ruff clean.
 - P4: combinatorial purged CV — `CombinatorialPurgedCV` C(S,k) paths + `oos_sharpe_distribution`; purge fixed for non-contiguous test blocks. `pytest` 53/53, ruff clean.
+- P5: PSR/DSR — `probabilistic_sharpe_ratio`, `expected_max_sharpe`, `deflated_sharpe_ratio` via `NormalDist`; hand-worked (SR=1,T=60,γ3=0,γ4=3) green. `pytest` 60/60, ruff clean.
 
-## Current phase: 5 — deflated / probabilistic Sharpe
+## Current phase: 6 — PBO via CSCV
 Goals:
-- `stats.py`: `probabilistic_sharpe_ratio`, `expected_max_sharpe` (SR0), `deflated_sharpe_ratio` from Bailey & Lopez de Prado 2014 Eq.(2)
-- No scipy — use `statistics.NormalDist` for Φ / Φ⁻¹
-Done-when: hand-worked DSR case (SR=1.0, T=60, skew=0, kurt=3) green; `pytest -v` + `ruff check` clean.
+- `pbo.py`: block-split returns, enumerate `C(S,S/2)` train/test combos, IS-rank → OOS relative rank of IS-winner, logit λ, PBO = fraction with λ≤0
+- Toy matrices with known PBO≈0 and PBO≈1
+Done-when: both toy PBO fixtures green; `pytest -v` + `ruff check` clean. Paper cutoff: reject if PBO > 0.05.
 
 ## Decisions
 - No scipy — stdlib/pandas cover DSR moments and CPCV combos.
@@ -25,15 +26,18 @@ Done-when: hand-worked DSR case (SR=1.0, T=60, skew=0, kurt=3) green; `pytest -v
 - P2: `run_backtest` takes precomputed signals; skips empty signal rows.
 - P3: purge helper is the reusable core; `PurgedKFold.split(n_samples)` takes a length.
 - P4: `oos_sharpe_distribution` evaluates precomputed path returns on test indices (rule-based signals — no IS fit yet); train indices reserved for later hyperparam selection.
+- P5: `kurt` is γ4 (non-excess; normal=3), not pandas excess. Callers convert `rets.kurt() + 3`.
 
 ## Gotchas
 - yfinance may lack "Adj Close" — fall back to "Close" (portfolio_mpt loader pattern).
 - Purge on LOOKBACK window overlap, not just labels — test explicitly.
 - Embargo = `int(n * embargo_pct)` samples after *each* contiguous test block (CPCV gaps).
 - Contiguous min/max purge over-deletes middle train groups under CPCV — purge must segment non-contiguous test indices.
+- PSR/DSR: pass γ4 raw kurtosis; pandas `.kurt()` is excess → add 3 before calling.
 
 ## Key files
 - `src/overfit_aware_signals/{data,signals,portfolio,backtest,analytics}.py`
 - `src/overfit_aware_signals/cv.py` — purge_train_indices + PurgedKFold
 - `src/overfit_aware_signals/cpcv.py` — CombinatorialPurgedCV + oos_sharpe_distribution
-- Full design (stats/pbo formulas): `C:\Users\venni\.claude\plans\sorted-gathering-willow.md`
+- `src/overfit_aware_signals/stats.py` — PSR, expected_max_sharpe (SR0), DSR
+- Full design (PBO formulas): `C:\Users\venni\.claude\plans\sorted-gathering-willow.md`
