@@ -8,9 +8,11 @@ Main portfolio site code lives in [Endokelp/Endoweb](https://github.com/Endokelp
 
 ## Python projects
 
-**overfit-aware-signals** (`PythonProjects/overfit-aware-signals/`) — flagship quant package
+**overfit-aware-signals** (`PythonProjects/overfit-aware-signals/`) - flagship quant package
 
-Most student backtests print one Sharpe and stop. That number is easy to inflate when you try several ideas. This package evaluates three real cross-sectional equity signals (12-1 momentum, one-month reversal, low-vol) with the overfitting toolkit from primary sources: purged CV with lookback-aware embargo, combinatorial purged CV, the Deflated Sharpe Ratio, and Probability of Backtest Overfitting. The centerpiece is an honest per-signal PASS/FAIL verdict under fixed thresholds, not a vanity Sharpe chart. Live run on ~50 US names (2005–2026) is documented in the package README, including a survivorship caveat (current constituents, not a point-in-time panel). Offline demo: `python -m overfit_aware_signals synth`. Live: `python -m overfit_aware_signals run`. Not trading advice.
+Most student backtests print one Sharpe and stop. That number is easy to inflate when you try several ideas. This package evaluates three real cross-sectional equity signals (12-1 momentum, one-month reversal, low-vol) with the overfitting toolkit from primary sources: purged CV with lookback-aware embargo, combinatorial purged CV, the Deflated Sharpe Ratio, and Probability of Backtest Overfitting. The centerpiece is an honest per-signal PASS/FAIL verdict under fixed thresholds, not a vanity Sharpe chart.
+
+After formula remediation, the live panel demo (current constituents, survivorship-biased, so not an alpha claim) rejects reversal and passes momentum and low-vol under DSR >= 0.95 and set-level PBO <= 0.05. Prefer the offline path for demos: `python -m overfit_aware_signals synth`. Live non-claim: `python -m overfit_aware_signals run`. One-pager PDF in `showcase/`. Not trading advice.
 
 **MPT** (`PythonProjects/portfolio_mpt/`)
 

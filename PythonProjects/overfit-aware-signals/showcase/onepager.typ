@@ -44,7 +44,7 @@
 
 // ---------- Results ----------
 #text(weight: 700, size: 10.6pt)[Results]
-#text(size: 8.6pt, fill: charcoal)[  (live panel demo — non-claim / survivorship-biased)]
+#text(size: 8.6pt, fill: charcoal)[  (live panel demo - non-claim / survivorship-biased)]
 #v(4pt)
 #text(size: 9pt)[
   50 liquid US equities, monthly rebalance, 2005-01 to 2026-06, long-only top-5, 10 bps one-way costs. DSR threshold \u{2265} 0.95, PBO threshold \u{2264} 0.05. PBO is set-level. Table uses n\_trials = 3; research log = 9. Absolute Sharpes are optimistic illustration, not a deployment claim. Prefer `synth` offline.
@@ -98,7 +98,7 @@
     #text(weight: 700, size: 9.4pt)[Non-claim]
     #v(3pt)
     #text(size: 8.9pt)[
-      Universe uses current constituents, not a point-in-time survivorship-free panel. Absolute Sharpes are optimistic demo numbers — not a deployment claim. Prefer `synth` offline. DSR/PBO only correct multiple testing within the supplied panel. Not trading advice.
+      Universe uses current constituents, not a point-in-time survivorship-free panel. Absolute Sharpes are optimistic demo numbers, not a deployment claim. Prefer `synth` offline. DSR/PBO only correct multiple testing within the supplied panel. Not trading advice.
     ]
   ]
 ]
