@@ -1,0 +1,9 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+screenshots/
+*.rar
+.env
+.DS_Store
+.claude-flow/
